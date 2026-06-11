@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudy Project Half Marathon 2026</title>
+  <meta name="description" content="Rudy Project Half Marathon 2026 hadir sebagai perayaan HUT Rudy Project ke-24 tahun di BSD City, Tangerang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .rp-garmin{
+      --purple:#7b2fff;
+      --purple-soft:#a259ff;
+      font-family:'Inter',sans-serif;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    .rp-garmin *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    .rp-garmin img{
+      max-width:100%;
+      display:block;
+    }
+
+    .rp-wrap{
+      width:100%;
+      max-width:1280px;
+      margin:0 auto;
+    }
+
+    .rp-section{
+      padding:110px 28px;
+    }
+
+    /* ── HERO ── */
+    .rp-hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.75),rgba(0,0,0,.93)),
+        url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9')
+        center/cover no-repeat;
+    }
+
+    .rp-hero::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at top right,rgba(123,47,255,.12),transparent 40%);
+    }
+
+    .rp-content{
+      position:relative;
+      z-index:2;
+      max-width:860px;
+    }
+
+    .rp-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 18px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(12px);
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#fff;
+    }
+
+    .rp-badge-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#a259ff;
+      animation:rp-pulse 1.8s infinite;
+    }
+
+    @keyframes rp-pulse{
+      0%,100%{opacity:1;transform:scale(1);}
+      50%{opacity:.5;transform:scale(.7);}
+    }
+
+    .rp-eyebrow{
+      margin-top:32px;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.24em;
+      color:#a6adb5;
+      text-transform:uppercase;
+    }
+
+    .rp-title{
+      margin-top:22px;
+      font-size:clamp(4rem,11vw,9rem);
+      line-height:.84;
+      font-weight:900;
+      letter-spacing:-.06em;
+      text-transform:uppercase;
+    }
+
+    .rp-title span{
+      color:#6d6d6d;
+      -webkit-text-stroke:1px rgba(255,255,255,.22);
+    }
+
+    .rp-subtitle{
+      margin-top:32px;
+      max-width:720px;
+      color:#c5cad1;
+      font-size:1.08rem;
+      line-height:2;
+      font-weight:500;
+    }
+
+    .rp-strip{
+      margin-top:48px;
+      display:flex;
+      flex-wrap:wrap;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      overflow:hidden;
+      width:fit-content;
+      backdrop-filter:blur(18px);
+      background:rgba(255,255,255,.03);
+    }
+
+    .rp-box{
+      padding:22px 28px;
+      min-width:200px;
+      border-right:1px solid rgba(255,255,255,.06);
+    }
+
+    .rp-box:last-child{border-right:none;}
+
+    .rp-label{
+      font-size:.68rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#81858c;
+      font-weight:800;
+    }
+
+    .rp-value{
+      margin-top:10px;
+      font-size:1rem;
+      font-weight:800;
+      color:#fff;
+    }
+
+    .rp-value.accent{color:#a259ff;}
+
+    .rp-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:40px;
+    }
+
+    .rp-tag{
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      color:#d5d9df;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    /* ── HEADINGS ── */
+    .rp-heading-label{
+      color:#8f949b;
+      font-size:.74rem;
+      font-weight:800;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .rp-heading{
+      font-size:clamp(2.4rem,6vw,5rem);
+      line-height:.92;
+      font-weight:900;
+      letter-spacing:-.05em;
+      color:#fff;
+    }
+
+    .rp-heading span{color:#6f7378;}
+
+    .rp-divider{
+      width:80px;
+      height:2px;
+      background:#fff;
+      margin-top:32px;
+      margin-bottom:54px;
+      opacity:.12;
+    }
+
+    /* ── ABOUT GRID ── */
+    .rp-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:42px;
+      align-items:center;
+    }
+
+    .rp-image{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+    }
+
+    .rp-image::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+    }
+
+    .rp-image img{
+      height:720px;
+      width:100%;
+      object-fit:cover;
+      filter:grayscale(100%);
+    }
+
+    .rp-body{
+      color:#c3c8cf;
+      line-height:2;
+      font-size:1rem;
+    }
+
+    .rp-body p+p{margin-top:20px;}
+
+    .rp-highlight{
+      margin-top:34px;
+      padding:28px;
+      border-left:2px solid rgba(255,255,255,.18);
+      background:#0d0d0d;
+      border-radius:0 18px 18px 0;
+      color:#fff;
+      font-weight:700;
+    }
+
+    /* ── CATEGORIES ── */
+    .rp-cat-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .rp-cat{
+      background:#0c0c0d;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:40px 30px;
+      text-align:center;
+    }
+
+    .rp-cat-km{
+      font-size:clamp(3rem,7vw,5.5rem);
+      font-weight:900;
+      line-height:1;
+      letter-spacing:-.05em;
+      color:#fff;
+    }
+
+    .rp-cat-unit{
+      font-size:1rem;
+      font-weight:700;
+      color:#6d7278;
+      margin-top:4px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    /* ── RUNDOWN ── */
+    .rp-rundown-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+
+    .rp-rundown-day{
+      background:#0c0c0d;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:34px;
+    }
+
+    .rp-rundown-date{
+      font-size:.75rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#a259ff;
+      margin-bottom:20px;
+    }
+
+    .rp-rundown-item{
+      display:flex;
+      gap:18px;
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+
+    .rp-rundown-item:last-child{border-bottom:none;}
+
+    .rp-rundown-time{
+      font-size:.78rem;
+      font-weight:800;
+      color:#6d7278;
+      min-width:100px;
+      flex-shrink:0;
+    }
+
+    .rp-rundown-act{
+      font-size:.9rem;
+      font-weight:600;
+      color:#c3c8cf;
+      line-height:1.5;
+    }
+
+    /* ── FEATURES ── */
+    .rp-feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+    }
+
+    .rp-feature{
+      background:#0c0c0d;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:34px;
+    }
+
+    .rp-icon{
+      width:68px;
+      height:68px;
+      border-radius:18px;
+      background:#151515;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.8rem;
+    }
+
+    .rp-feature-title{
+      margin-top:22px;
+      font-size:1.18rem;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .rp-feature-desc{
+      margin-top:14px;
+      line-height:1.9;
+      color:#9ea4ac;
+      font-size:.95rem;
+    }
+
+    /* ── PRODUCT SHOWCASE ── */
+    .rp-product-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .rp-product-card{
+      border-radius:28px;
+      overflow:hidden;
+      position:relative;
+      background:#0c0c0d;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .rp-product-card img{
+      width:100%;
+      height:400px;
+      object-fit:cover;
+      transition:transform .6s ease;
+    }
+
+    .rp-product-card:hover img{transform:scale(1.04);}
+
+    .rp-product-overlay{
+      position:absolute;
+      bottom:0;left:0;right:0;
+      padding:28px;
+      background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);
+    }
+
+    .rp-product-name{
+      font-size:1rem;
+      font-weight:900;
+      color:#fff;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+
+    .rp-product-sub{
+      font-size:.78rem;
+      color:#9ea4ac;
+      margin-top:6px;
+      font-weight:600;
+    }
+
+    /* ── PHOTO CONTEST ── */
+    .rp-contest{
+      position:relative;
+      overflow:hidden;
+      border-radius:40px;
+      padding:80px 60px;
+      background:
+        linear-gradient(135deg,rgba(10,10,10,.94),rgba(30,10,50,.88)),
+        url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU')
+        center/cover no-repeat;
+      border:1px solid rgba(123,47,255,.2);
+    }
+
+    .rp-contest::before{
+      content:'';
+      position:absolute;
+      top:-80px;right:-80px;
+      width:400px;height:400px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(123,47,255,.18),transparent 70%);
+    }
+
+    .rp-contest-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .rp-contest-title{
+      font-size:clamp(2.5rem,6vw,5rem);
+      line-height:.92;
+      font-weight:900;
+      letter-spacing:-.05em;
+    }
+
+    .rp-contest-title span{color:#a259ff;}
+
+    .rp-contest-sub{
+      margin-top:20px;
+      color:#c4c9d0;
+      font-size:1.08rem;
+      line-height:1.8;
+      max-width:600px;
+    }
+
+    .rp-contest-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      margin-top:48px;
+    }
+
+    .rp-contest-box{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:28px;
+    }
+
+    .rp-contest-box-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:.8rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#a259ff;
+      margin-bottom:18px;
+    }
+
+    .rp-contest-items{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .rp-contest-items li{
+      font-size:.88rem;
+      color:#c3c8cf;
+      font-weight:600;
+      padding-left:20px;
+      position:relative;
+      line-height:1.6;
+    }
+
+    .rp-contest-items li::before{
+      content:'✦';
+      position:absolute;
+      left:0;
+      color:#a259ff;
+      font-size:.7rem;
+    }
+
+    .rp-contest-deadline{
+      margin-top:40px;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .rp-deadline-box{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:18px 24px;
+      background:rgba(123,47,255,.14);
+      border:1px solid rgba(123,47,255,.3);
+      border-radius:16px;
+    }
+
+    .rp-deadline-label{
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#a259ff;
+    }
+
+    .rp-deadline-date{
+      font-size:1.1rem;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .rp-submit-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:18px 32px;
+      border-radius:999px;
+      background:#fff;
+      color:#000;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.82rem;
+      text-decoration:none;
+      transition:opacity .2s;
+    }
+
+    .rp-submit-btn:hover{opacity:.88;}
+
+    /* ── BANNER ── */
+    .rp-banner{
+      position:relative;
+      overflow:hidden;
+      border-radius:40px;
+      padding:80px 60px;
+      background:
+        linear-gradient(135deg,rgba(10,10,10,.92),rgba(25,25,25,.82)),
+        url('https://lh3.googleusercontent.com/d/1N7Qjys5QmB312gUGBm9AWxU_u9SuOsYA')
+        center/cover no-repeat;
+    }
+
+    .rp-banner::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+    }
+
+    .rp-banner-content{
+      position:relative;
+      z-index:2;
+      max-width:820px;
+    }
+
+    .rp-banner-title{
+      font-size:clamp(2.5rem,6vw,5rem);
+      line-height:.92;
+      font-weight:900;
+      letter-spacing:-.05em;
+    }
+
+    .rp-banner-title span{color:#7b7f86;}
+
+    .rp-banner-text{
+      margin-top:26px;
+      color:#c4c9d0;
+      line-height:2;
+      max-width:700px;
+    }
+
+    .rp-coming{
+      margin-top:38px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px 32px;
+      border-radius:999px;
+      background:#fff;
+      color:#000;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    /* ── FOOTER ── */
+    .rp-footer{
+      padding:70px 28px;
+      border-top:1px solid rgba(255,255,255,.08);
+      background:#050505;
+      text-align:center;
+    }
+
+    .rp-footer-logo{
+      font-size:1.6rem;
+      font-weight:900;
+      color:#fff;
+      letter-spacing:-.04em;
+    }
+
+    .rp-footer-copy{
+      margin-top:16px;
+      color:#818891;
+      font-size:.92rem;
+      line-height:1.8;
+    }
+
+    .rp-footer-links{
+      margin-top:22px;
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .rp-footer-link{
+      font-size:.82rem;
+      font-weight:700;
+      color:#a259ff;
+      text-decoration:none;
+      letter-spacing:.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:980px){
+      .rp-grid,.rp-rundown-grid,.rp-contest-grid{grid-template-columns:1fr;}
+      .rp-image img{height:500px;}
+      .rp-cat-grid,.rp-product-grid{grid-template-columns:1fr;}
+    }
+
+    @media(max-width:860px){
+      .rp-section{padding:90px 22px;}
+      .rp-title{font-size:4.2rem;}
+      .rp-strip{width:100%;flex-direction:column;}
+      .rp-box{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
+      .rp-box:last-child{border-bottom:none;}
+      .rp-banner,.rp-contest{padding:50px 34px;}
+      .rp-cat-grid{grid-template-columns:1fr 1fr;}
+      .rp-product-grid{grid-template-columns:1fr 1fr;}
+    }
+
+    @media(max-width:520px){
+      .rp-cat-grid,.rp-product-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rp-garmin">
+
+  <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+  <section class="rp-section rp-hero">
+    <div class="rp-wrap">
+      <div class="rp-content">
+
+        <div class="rp-badge">
+          <span class="rp-badge-dot"></span>
+          COMING SOON • OCTOBER 2026 • BSD CITY
+        </div>
+
+        <div class="rp-eyebrow">
+          Performance · Community · Sport Tourism · Lifestyle
+        </div>
+
+        <div class="rp-title">
+          RUDY PROJECT<br>
+          <span>HALF MARATHON</span>
+        </div>
+
+        <div class="rp-subtitle">
+          Pengalaman lari premium generasi baru hadir di BSD City, Tangerang — memadukan
+          semangat komunitas lari, budaya celebrity runner, teknologi balap terdepan,
+          dan atmosfer lifestyle olahraga modern yang sesungguhnya.
+        </div>
+
+        <div class="rp-strip">
+          <div class="rp-box">
+            <div class="rp-label">Tanggal</div>
+            <div class="rp-value">October 2026</div>
+          </div>
+          <div class="rp-box">
+            <div class="rp-label">Lokasi</div>
+            <div class="rp-value">BSD City, Tangerang</div>
+          </div>
+          <div class="rp-box">
+            <div class="rp-label">Kategori</div>
+            <div class="rp-value">21 KM · 10 KM · 5 KM</div>
+          </div>
+          <div class="rp-box">
+            <div class="rp-label">Powered By</div>
+            <div class="rp-value accent">IZT Race Technology</div>
+          </div>
+        </div>
+
+        <div class="rp-tags">
+          <div class="rp-tag">21 KM</div>
+          <div class="rp-tag">10 KM</div>
+          <div class="rp-tag">5 KM</div>
+          <div class="rp-tag">BSD City</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
+  <section class="rp-section">
+    <div class="rp-wrap">
+
+      <div class="rp-heading-label">Tentang Event</div>
+      <div class="rp-heading">Dirancang Untuk <span>Pelari Modern</span></div>
+      <div class="rp-divider"></div>
+
+      <div class="rp-grid">
+        <div class="rp-image">
+          <img src="https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU" alt="RPHM 2026 Activity">
+        </div>
+        <div class="rp-body">
+          <p>
+            Rudy Project Half Marathon 2026 hadir sebagai perayaan HUT Rudy Project ke-24
+            tahun — sebuah event lari premium yang merangkul semangat performa, gaya hidup,
+            dan budaya olahraga modern di jantung BSD City, Tangerang, Banten.
+          </p>
+          <p>
+            Menggabungkan celebrity runners, komunitas berpengaruh, para atlet nasional,
+            dan produksi race kelas dunia menjadi satu destinasi event yang ikonik,
+            sinematik, dan benar-benar unforgettable.
+          </p>
+          <p>
+            Terbuka untuk pelanggan, komunitas, dan masyarakat umum dengan tiga kategori
+            jarak — 21 KM Half Marathon, 10 KM, dan 5 KM — yang melewati jalan beraspal
+            premium kawasan BSD City.
+          </p>
+          <div class="rp-highlight">
+            Dipersembahkan oleh Rudy Project Indonesia melalui PT. Arras Protama Sejahtera,
+            dengan infrastruktur timing profesional bertenaga IZT Race Technology.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CATEGORIES ══════════════════════════════ -->
+  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
+    <div class="rp-wrap">
+
+      <div class="rp-heading-label">Race Categories</div>
+      <div class="rp-heading">Pilih <span>Jarakmu</span></div>
+      <div class="rp-divider"></div>
+
+      <div class="rp-cat-grid">
+        <div class="rp-cat">
+          <div class="rp-cat-km">21</div>
+          <div class="rp-cat-unit">Kilometer · Half Marathon</div>
+        </div>
+        <div class="rp-cat">
+          <div class="rp-cat-km">10</div>
+          <div class="rp-cat-unit">Kilometer · Competitive Run</div>
+        </div>
+        <div class="rp-cat">
+          <div class="rp-cat-km">5</div>
+          <div class="rp-cat-unit">Kilometer · Fun Run</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ RUNDOWN ══════════════════════════════ -->
+  <section class="rp-section">
+    <div class="rp-wrap">
+
+      <div class="rp-heading-label">Schedule</div>
+      <div class="rp-heading">Rundown <span>Event</span></div>
+      <div class="rp-divider"></div>
+
+      <div class="rp-rundown-grid">
+
+        <div class="rp-rundown-day">
+          <div class="rp-rundown-date">📅 Race Pack Collection — October 2026 </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">08.00 – 17.00</div>
+            <div class="rp-rundown-act">Pengambilan Race Pack</div>
+          </div>
+        </div>
+
+        <div class="rp-rundown-day">
+          <div class="rp-rundown-date">🏁 Race Day — October 2026</div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">04.30 – 05.00</div>
+            <div class="rp-rundown-act">Pemanasan &amp; Doa Pembuka</div>
+          </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">05.00</div>
+            <div class="rp-rundown-act">Flag Off 21 KM (COT 4 jam)</div>
+          </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">06.00 – 06.30</div>
+            <div class="rp-rundown-act">Bazar UMKM &amp; Sponsor · Pemanasan 10 KM &amp; 5 KM</div>
+          </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">06.30</div>
+            <div class="rp-rundown-act">Flag Off 10 KM (COT 2 jam)</div>
+          </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">06.45 – 07.00</div>
+            <div class="rp-rundown-act">Persiapan &amp; Flag Off 5 KM (COT 1 jam)</div>
+          </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">09.00 – 10.30</div>
+            <div class="rp-rundown-act">Upacara Pemenang 5 KM · 10 KM · 21 KM</div>
+          </div>
+          <div class="rp-rundown-item">
+            <div class="rp-rundown-time">10.30 – 12.00</div>
+            <div class="rp-rundown-act">Hiburan &amp; Penutupan</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ PHOTO CONTEST ══════════════════════════════ -->
+  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
+    <div class="rp-wrap">
+
+      <div class="rp-contest">
+        <div class="rp-contest-content">
+
+          <div class="rp-heading-label" style="color:rgba(162,89,255,.7);">Photo Contest</div>
+          <div class="rp-contest-title">
+            ARE YOU READY TO<br>BE THE NEXT<br>
+            <span>RPHM FLYER MODEL?</span>
+          </div>
+          <div class="rp-contest-sub">
+            Foto terbaik akan dijadikan model untuk Flyer Event Rudy Project Half Marathon 2026.
+            Tunjukkan gaya larimu, kenakan Rudy Project, dan jadilah inspirasi jutaan pelari!
+          </div>
+
+          <div class="rp-contest-grid">
+            <div class="rp-contest-box">
+              <div class="rp-contest-box-title">📸 Syarat &amp; Ketentuan</div>
+              <ul class="rp-contest-items">
+                <li>Foto pelari dengan kualitas jelas dan menarik</li>
+                <li>Wajib menggunakan kacamata Rudy Project / RPJ</li>
+                <li>Format portrait &amp; file resolusi tinggi</li>
+                <li>Komposisi foto estetik dan proporsional</li>
+                <li>Upload di feeds &amp; Story Instagram (akun tidak di-private)</li>
+                <li>Tag &amp; mention @rudyprojectid @arrasadventure</li>
+                <li>Gunakan hashtag #RPHMModel #PerformanceStartsInYourHead</li>
+                <li>Follow Instagram @rudyprojectid @arrasadventure</li>
+              </ul>
+            </div>
+            <div class="rp-contest-box">
+              <div class="rp-contest-box-title">🏆 Pemenang Mendapatkan</div>
+              <ul class="rp-contest-items">
+                <li>Rudy Project Eyewear (Eksklusif)</li>
+                <li>Smartwatch Premium</li>
+                <li>Voucher Belanja Rudy Project senilai Rp 1.000.000</li>
+                <li>Free 1 Slot RPHM All Category</li>
+                <li>Featured sebagai Model Flyer Resmi Event</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rp-contest-deadline">
+            <div class="rp-deadline-box">
+              <div>
+                <div class="rp-deadline-label">Last Entry Date</div>
+                <div class="rp-deadline-date">15 Juni 2026</div>
+              </div>
+            </div>
+            <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="rp-submit-btn">
+              Submit Here →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ PRODUCT SHOWCASE ══════════════════════════════ -->
+  <section class="rp-section">
+    <div class="rp-wrap">
+
+      <div class="rp-heading-label">Rudy Project UTMB Collection</div>
+      <div class="rp-heading">Performa Dimulai <span>Dari Sini</span></div>
+      <div class="rp-divider"></div>
+
+      <div class="rp-product-grid">
+        <div class="rp-product-card">
+          <img src="https://lh3.googleusercontent.com/d/1zZYZohnoTXpKmny2F5NOPKFMlQIZXklt" alt="Rudy Project UTMB 1">
+          <div class="rp-product-overlay">
+            <div class="rp-product-name">UTMB Series</div>
+            <div class="rp-product-sub">Trail Performance Eyewear</div>
+          </div>
+        </div>
+        <div class="rp-product-card">
+          <img src="https://lh3.googleusercontent.com/d/1157xlZqJcsyU0g6eOKwWDtS8Q4z5ql-4" alt="Rudy Project UTMB 2">
+          <div class="rp-product-overlay">
+            <div class="rp-product-name">Astral X Desert Matte</div>
+            <div class="rp-product-sub">Advanced Photochromic Technology</div>
+          </div>
+        </div>
+        <div class="rp-product-card">
+          <img src="https://lh3.googleusercontent.com/d/1amDuh_Rj3VMO7IrdgDyallFwV0esDepX" alt="Rudy Project UTMB 3">
+          <div class="rp-product-overlay">
+            <div class="rp-product-name">Designed in Italy</div>
+            <div class="rp-product-sub">Premium Aerospace Materials</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ PREMIUM FEATURES ══════════════════════════════ -->
+  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
+    <div class="rp-wrap">
+
+      <div class="rp-heading-label">Premium Experience</div>
+      <div class="rp-heading">Lebih Dari Sekadar <span>Sebuah Race</span></div>
+      <div class="rp-divider"></div>
+
+      <div class="rp-feature-grid">
+        <div class="rp-feature">
+          <div class="rp-icon">🏃</div>
+          <div class="rp-feature-title">Celebrity Running Culture</div>
+          <div class="rp-feature-desc">
+            Berlari bersama selebriti, influencer, atlet nasional, dan komunitas performa
+            dalam satu atmosfer race premium yang belum pernah ada sebelumnya.
+          </div>
+        </div>
+        <div class="rp-feature">
+          <div class="rp-icon">⚡</div>
+          <div class="rp-feature-title">International Race Standard</div>
+          <div class="rp-feature-desc">
+            Dibangun dengan timing profesional dari IZT Race Technology, alur race elite,
+            infrastruktur premium, dan pengalaman runner berkelas dunia di BSD City.
+          </div>
+        </div>
+        <div class="rp-feature">
+          <div class="rp-icon">🕶️</div>
+          <div class="rp-feature-title">Rudy Project Lifestyle</div>
+          <div class="rp-feature-desc">
+            Brand olahraga performa mewah asal Italia yang memadukan budaya lari,
+            gaya, fashion, dan teknologi lensa ImpactX® mutakhir dalam satu event.
+          </div>
+        </div>
+        <div class="rp-feature">
+          <div class="rp-icon">🎤</div>
+          <div class="rp-feature-title">Entertainment Atmosphere</div>
+          <div class="rp-feature-desc">
+            Musik, aktivasi sosial, kehadiran media, bazar UMKM, engagement komunitas,
+            dan momen race day yang penuh energi dari pagi hingga penutupan.
+          </div>
+        </div>
+        <div class="rp-feature">
+          <div class="rp-icon">🏅</div>
+          <div class="rp-feature-title">Podium Prize &amp; Awards</div>
+          <div class="rp-feature-desc">
+            Penghargaan bergengsi untuk pemenang setiap kategori dengan upacara
+            podium resmi dan hadiah menarik dari Rudy Project Indonesia.
+          </div>
+        </div>
+        <div class="rp-feature">
+          <div class="rp-icon">🌏</div>
+          <div class="rp-feature-title">Sport Tourism Impact</div>
+          <div class="rp-feature-desc">
+            Berkontribusi pada pertumbuhan sport tourism Indonesia, mendukung pariwisata
+            lokal, dan membangun jaringan komunitas lari nasional yang kuat.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ OFFICIAL COLLAB BANNER ══════════════════════════════ -->
+  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);">
+    <div class="rp-wrap">
+
+      <div class="rp-banner">
+        <div class="rp-banner-content">
+
+          <div class="rp-heading-label">Official Collaboration</div>
+
+          <div class="rp-banner-title">
+            RUDY PROJECT INDONESIA<br>
+            <span>BY ARRAS PROJECT</span>
+          </div>
+
+          <div class="rp-banner-text">
+            Half marathon premium yang menggabungkan performa olahraga, celebrity culture,
+            aktivasi komunitas, dan atmosfer race mewah — dengan teknologi timing
+            bertenaga IZT Race Technology. Diselenggarakan Agustus 2026 di BSD City, Tangerang, Banten.
+          </div>
+
+          <div class="rp-coming">
+            Registration Opening Soon
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="rp-footer">
+    <div class="rp-footer-logo">RUDY PROJECT HALF MARATHON 2026</div>
+    <div class="rp-footer-copy">
+      Rudy Project Indonesia · PT. Arras Protama Sejahtera · IZT Race Technology<br>
+      Icon Business Park 5 Blok F No. 6, Sampora, Cisauk, Tangerang, Banten 15345<br>
+      +62 811-880-944 · arrasadventures@gmail.com
+    </div>
+    <div class="rp-footer-links">
+      <a href="https://instagram.com/rudyprojectid" class="rp-footer-link">@rudyprojectid</a>
+      <a href="https://instagram.com/arrasadventure" class="rp-footer-link">@arrasadventure</a>
+      <a href="mailto:socialmediarpid@gmail.com" class="rp-footer-link">socialmediarpid@gmail.com</a>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>
