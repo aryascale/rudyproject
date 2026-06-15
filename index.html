@@ -10,10 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #000000;
-      --text-sub: #666666;
-      --border: #e5e5e5;
+      --bg: #000000;
+      --text: #ffffff;
+      --text-sub: #aaaaaa;
+      --border: #333333;
     }
 
     body {
@@ -44,9 +44,10 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9') center/cover no-repeat;
+      background: url('assets/hero.jpeg') center/cover no-repeat;
       opacity: 0.6;
       z-index: 0;
+      width: 100%; height: 100%;
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -129,27 +130,27 @@
     }
 
     /* ── 2. ABOUT LAYERED DEPTH ── */
-    .about { padding: 150px 0; border-bottom: 1px solid #e5e5e5; }
+    .about { padding: 150px 0; border-bottom: 1px solid var(--border); }
     .about-wrap { display: flex; align-items: center; position: relative; }
     .about-img {
       width: 60%; position: relative; z-index: 1;
       border-radius: 24px; overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
     .about-img img { width: 100%; height: 700px; object-fit: cover; filter: grayscale(100%); }
     .about-text {
       width: 50%;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       padding: 60px; position: absolute; right: 0; z-index: 2;
-      border: 1px solid rgba(255,255,255,0.6); border-radius: 24px;
-      box-shadow: -10px 20px 40px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 24px;
+      box-shadow: -10px 20px 40px rgba(0,0,0,0.5);
     }
     .about-title { font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 0.95; margin-bottom: 30px; letter-spacing: -0.02em; }
     .about-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-sub); margin-bottom: 20px; }
 
     /* ── 3. CATEGORIES WITH IMAGES (JARAK LARI) ── */
-    .cat-sec { padding: 150px 0; background: #fafafa; border-bottom: 1px solid #e5e5e5; }
+    .cat-sec { padding: 150px 0; background: var(--bg); border-bottom: 1px solid var(--border); }
     .cat-head { text-align: center; font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 80px; }
     .cat-grid {
       display: grid;
@@ -208,23 +209,23 @@
     }
 
     /* ── 4. SHOWCASE PRODUCT (Fixed Glassmorphism overlay) ── */
-    .showcase { padding: 150px 0; background: #fff; overflow: hidden; }
+    .showcase { padding: 150px 0; background: var(--bg); overflow: hidden; }
     .sc-title { text-align: center; font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 100px; }
     .sc-grid { display: flex; justify-content: center; align-items: center; perspective: 1500px; }
     .sc-card {
-      position: relative; width: 340px; height: 500px; background: #fff;
-      border: 1px solid #eaeaea; border-radius: 24px; overflow: hidden;
+      position: relative; width: 340px; height: 500px; background: #111;
+      border: 1px solid #333; border-radius: 24px; overflow: hidden;
       transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer;
     }
     .sc-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.6s ease; }
     .sc-info {
       position: absolute; bottom: 20px; left: 20px; right: 20px;
-      background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 16px; padding: 16px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(10px); opacity: 0.9; transition: all 0.4s ease;
+      background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateY(10px); opacity: 0.9; transition: all 0.4s ease;
     }
-    .sc-info h4 { font-family: 'Barlow', sans-serif; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; color: #111; margin-bottom: 4px; }
-    .sc-info p { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; color: #555; }
+    .sc-info h4 { font-family: 'Barlow', sans-serif; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 4px; }
+    .sc-info p { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; color: #aaa; }
     .sc-card-1 { transform: rotateY(15deg) translateZ(-50px); z-index: 1; margin-right: -40px; box-shadow: -15px 15px 0px rgba(0,0,0,0.05); }
     .sc-card-2 { transform: translateZ(50px); z-index: 3; box-shadow: 0px 25px 50px rgba(0,0,0,0.15); }
     .sc-card-3 { transform: rotateY(-15deg) translateZ(-50px); z-index: 2; margin-left: -40px; box-shadow: 15px 15px 0px rgba(0,0,0,0.05); }
@@ -233,7 +234,7 @@
     .sc-card:hover .sc-info { transform: translateY(0); opacity: 1; }
 
     /* ── 5. RUNDOWN TIMELINE (Mathematically Perfect & Neat) ── */
-    .rundown { padding: 150px 0; border-top: 1px solid #e5e5e5; background: #fafafa; }
+    .rundown { padding: 150px 0; border-top: 1px solid var(--border); background: var(--bg); }
     .rd-head { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 80px; text-align: center; }
     
     .timeline {
@@ -249,7 +250,7 @@
       top: 10px; bottom: 10px;
       left: 0;
       width: 2px;
-      background: #d2d2d7;
+      background: #444;
     }
     .tl-node {
       position: relative;
@@ -264,14 +265,14 @@
       left: -7px; /* Exact center of the 2px line: (16px total width) / 2 = 8. 8-1 = 7. */
       top: 6px; /* Align with text */
       width: 16px; height: 16px;
-      background: #fff;
-      border: 4px solid #111;
+      background: #000;
+      border: 4px solid #fff;
       border-radius: 50%;
       box-sizing: border-box;
       transition: background 0.3s ease, transform 0.3s ease;
     }
     .tl-node:hover::before {
-      background: #111;
+      background: #fff;
       transform: scale(1.2);
     }
     .tl-time {
@@ -279,16 +280,16 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
-      background: #111;
-      color: #fff;
+      background: #fff;
+      color: #000;
       padding: 6px 14px;
       border-radius: 100px;
       margin-bottom: 16px;
       letter-spacing: 0.05em;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-    .tl-title { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; color: #111; }
-    .tl-desc { color: #555; line-height: 1.6; font-size: 1.05rem; }
+    .tl-title { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; color: #fff; }
+    .tl-desc { color: #aaa; line-height: 1.6; font-size: 1.05rem; }
 
     /* ── 6. PHOTO CONTEST (DARK + SHADCN ACCORDION) ── */
     .contest { position: relative; padding: 150px 0; background: #000; color: #fff; }
@@ -309,34 +310,34 @@
     .det-body li::before { content: '—'; position: absolute; left: 0; color: #fff; }
 
     /* ── 7. PREMIUM FEATURES (Clean Spatial Apple Style) ── */
-    .features { padding: 150px 0; background: #fff; }
+    .features { padding: 150px 0; background: var(--bg); }
     .feat-head { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 80px; text-align: center; }
     .feat-list { display: flex; flex-direction: column; gap: 0; max-width: 900px; margin: 0 auto; }
-    .feat-item { display: flex; gap: 40px; padding: 40px 0; border-top: 1px solid #eaeaea; align-items: flex-start; }
-    .feat-item:last-child { border-bottom: 1px solid #eaeaea; }
-    .feat-num { font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 300; color: #ccc; min-width: 80px; line-height: 1; }
-    .feat-text h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #111; }
-    .feat-text p { font-size: 1.05rem; color: #555; line-height: 1.7; max-width: 700px; }
+    .feat-item { display: flex; gap: 40px; padding: 40px 0; border-top: 1px solid var(--border); align-items: flex-start; }
+    .feat-item:last-child { border-bottom: 1px solid var(--border); }
+    .feat-num { font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 300; color: #666; min-width: 80px; line-height: 1; }
+    .feat-text h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #fff; }
+    .feat-text p { font-size: 1.05rem; color: #aaa; line-height: 1.7; max-width: 700px; }
 
     /* ── 8. BANNER REGISTRATION ── */
-    .banner { padding: 120px 0; text-align: center; position: relative; border-bottom: 1px solid #e5e5e5; }
+    .banner { padding: 120px 0; text-align: center; position: relative; border-bottom: 1px solid var(--border); }
     .banner-bg { position: absolute; inset: 0; background: url('https://lh3.googleusercontent.com/d/1N7Qjys5QmB312gUGBm9AWxU_u9SuOsYA') center/cover fixed no-repeat; filter: grayscale(100%); opacity: 0.15; z-index: 0; }
     .banner-content { position: relative; z-index: 2; }
-    .btn { display: inline-flex; background: #111; color: #fff; padding: 20px 48px; font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; border-radius: 100px; text-decoration: none; transition: all 0.3s; border: 1px solid #111; margin-top: 40px; }
-    .btn:hover { background: #333; transform: scale(1.02); }
+    .btn { display: inline-flex; background: #fff; color: #000; padding: 20px 48px; font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; border-radius: 100px; text-decoration: none; transition: all 0.3s; border: 1px solid #fff; margin-top: 40px; }
+    .btn:hover { background: #ddd; transform: scale(1.02); }
 
     /* ── 9. APPLE FOOTER ── */
-    .apple-footer { background: #f5f5f7; padding: 40px 0 20px; color: #1d1d1f; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.33337; }
+    .apple-footer { background: #111; padding: 40px 0 20px; color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.33337; }
     .af-wrap { max-width: 980px; margin: 0 auto; padding: 0 22px; }
-    .af-note { color: #86868b; padding-bottom: 20px; border-bottom: 1px solid #d2d2d7; margin-bottom: 20px; }
+    .af-note { color: #86868b; padding-bottom: 20px; border-bottom: 1px solid #333; margin-bottom: 20px; }
     .af-dir { display: flex; flex-wrap: wrap; margin-bottom: 20px; }
     .af-col { flex: 1; min-width: 200px; margin-bottom: 20px; }
-    .af-col h3 { font-size: 12px; font-weight: 600; color: #1d1d1f; margin-bottom: 10px; }
+    .af-col h3 { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 10px; }
     .af-col ul { list-style: none; padding: 0; margin: 0; }
     .af-col li { margin-bottom: 8px; }
-    .af-col a { color: #515154; text-decoration: none; }
-    .af-col a:hover { text-decoration: underline; }
-    .af-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 15px; border-top: 1px solid #d2d2d7; color: #86868b; }
+    .af-col a { color: #aaa; text-decoration: none; }
+    .af-col a:hover { text-decoration: underline; color: #fff; }
+    .af-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 15px; border-top: 1px solid #333; color: #86868b; }
 
     /* ── RESPONSIVE ── */
     @media(max-width: 1024px) {
