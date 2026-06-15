@@ -7,689 +7,726 @@
   <meta name="description" content="Rudy Project Half Marathon 2026 hadir sebagai perayaan HUT Rudy Project ke-24 tahun di BSD City, Tangerang.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    .rp-garmin{
-      --purple:#7b2fff;
-      --purple-soft:#a259ff;
-      font-family:'Inter',sans-serif;
-      background:#000;
-      color:#fff;
-      overflow-x:hidden;
+    :root {
+      --bg: #ffffff;
+      --text-main: #000000;
+      --text-sub: #666666;
+      --border: #e5e5e5;
+      --border-dark: #000000;
+      --card-bg: #f8f8f8;
+      --accent: #000000;
+      --accent-text: #ffffff;
     }
 
-    *, .rp-garmin *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      overflow-x: hidden; /* Prevent horizontal scroll glitches */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      padding: 0;
     }
 
-    .rp-garmin img{
-      max-width:100%;
-      display:block;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .rp-wrap{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .rp-section{
-      padding:110px 28px;
+    /* Headings strictly use Barlow */
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .rp-wrap {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .rp-section {
+      padding: 120px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .rp-section-dark {
+      background: var(--card-bg);
     }
 
     /* ── HERO ── */
-    .rp-hero{
-      position:relative;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,.75),rgba(0,0,0,.93)),
-        url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9')
-        center/cover no-repeat;
+    .rp-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #fff;
+      padding: 0;
+      border-bottom: 1px solid var(--border-dark);
     }
 
-    .rp-hero::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at top right,rgba(123,47,255,.12),transparent 40%);
+    .rp-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9') center/cover no-repeat;
+      filter: grayscale(100%) opacity(0.35); /* Monochrome aesthetic */
+      z-index: 0;
     }
 
-    .rp-content{
-      position:relative;
-      z-index:2;
-      max-width:860px;
+    .rp-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 100%);
+      z-index: 1;
     }
 
-    .rp-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 18px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      backdrop-filter:blur(12px);
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:#fff;
+    .rp-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      padding: 120px 0;
     }
 
-    .rp-badge-dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#a259ff;
-      animation:rp-pulse 1.8s infinite;
+    .rp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border: 1px solid var(--border-dark);
+      background: var(--bg);
+      font-family: 'Barlow', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-main);
     }
 
-    @keyframes rp-pulse{
-      0%,100%{opacity:1;transform:scale(1);}
-      50%{opacity:.5;transform:scale(.7);}
+    .rp-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--text-main);
+      animation: rp-pulse 2s infinite;
     }
 
-    .rp-eyebrow{
-      margin-top:32px;
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.24em;
-      color:#a6adb5;
-      text-transform:uppercase;
+    @keyframes rp-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .3; transform: scale(.6); }
     }
 
-    .rp-title{
-      margin-top:22px;
-      font-size:clamp(4rem,11vw,9rem);
-      line-height:.84;
-      font-weight:900;
-      letter-spacing:-.06em;
-      text-transform:uppercase;
+    .rp-eyebrow {
+      margin-top: 32px;
+      font-family: 'Barlow', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .25em;
+      color: var(--text-sub);
+      text-transform: uppercase;
     }
 
-    .rp-title span{
-      color:#6d6d6d;
-      -webkit-text-stroke:1px rgba(255,255,255,.22);
+    .rp-title {
+      margin-top: 22px;
+      font-family: 'Barlow', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 8.5rem);
+      line-height: .85;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      color: var(--text-main);
     }
 
-    .rp-subtitle{
-      margin-top:32px;
-      max-width:720px;
-      color:#c5cad1;
-      font-size:1.08rem;
-      line-height:2;
-      font-weight:500;
+    .rp-title span {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--text-main);
     }
 
-    .rp-strip{
-      margin-top:48px;
-      display:flex;
-      flex-wrap:wrap;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      overflow:hidden;
-      width:fit-content;
-      backdrop-filter:blur(18px);
-      background:rgba(255,255,255,.03);
+    .rp-subtitle {
+      margin-top: 32px;
+      max-width: 720px;
+      color: var(--text-sub);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      font-weight: 400;
     }
 
-    .rp-box{
-      padding:22px 28px;
-      min-width:200px;
-      border-right:1px solid rgba(255,255,255,.06);
+    .rp-strip {
+      margin-top: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid var(--border-dark);
+      width: fit-content;
+      background: var(--bg);
     }
 
-    .rp-box:last-child{border-right:none;}
-
-    .rp-label{
-      font-size:.68rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:#81858c;
-      font-weight:800;
+    .rp-box {
+      padding: 22px 28px;
+      min-width: 200px;
+      border-right: 1px solid var(--border-dark);
     }
 
-    .rp-value{
-      margin-top:10px;
-      font-size:1rem;
-      font-weight:800;
-      color:#fff;
+    .rp-box:last-child {
+      border-right: none;
     }
 
-    .rp-value.accent{color:#a259ff;}
-
-    .rp-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:40px;
+    .rp-label {
+      font-family: 'Barlow', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-sub);
+      font-weight: 700;
     }
 
-    .rp-tag{
-      padding:12px 18px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.03);
-      color:#d5d9df;
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+    .rp-value {
+      margin-top: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .rp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .rp-tag {
+      padding: 10px 16px;
+      border: 1px solid var(--border-dark);
+      background: transparent;
+      color: var(--text-main);
+      font-family: 'Barlow', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
     /* ── HEADINGS ── */
-    .rp-heading-label{
-      color:#8f949b;
-      font-size:.74rem;
-      font-weight:800;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      margin-bottom:16px;
+    .rp-heading-label {
+      color: var(--text-sub);
+      font-family: 'Barlow', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
-    .rp-heading{
-      font-size:clamp(2.4rem,6vw,5rem);
-      line-height:.92;
-      font-weight:900;
-      letter-spacing:-.05em;
-      color:#fff;
+    .rp-heading {
+      font-family: 'Barlow', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--text-main);
+      text-transform: uppercase;
     }
 
-    .rp-heading span{color:#6f7378;}
+    .rp-heading span {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--text-main);
+    }
 
-    .rp-divider{
-      width:80px;
-      height:2px;
-      background:#fff;
-      margin-top:32px;
-      margin-bottom:54px;
-      opacity:.12;
+    .rp-divider {
+      width: 80px;
+      height: 3px;
+      background: var(--text-main);
+      margin-top: 32px;
+      margin-bottom: 64px;
     }
 
     /* ── ABOUT GRID ── */
-    .rp-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:42px;
-      align-items:center;
+    .rp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
     }
 
-    .rp-image{
-      position:relative;
-      overflow:hidden;
-      border-radius:34px;
+    .rp-image {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-dark);
     }
 
-    .rp-image::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+    .rp-image img {
+      height: 720px;
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.2);
     }
 
-    .rp-image img{
-      height:720px;
-      width:100%;
-      object-fit:cover;
-      filter:grayscale(100%);
+    .rp-body {
+      color: var(--text-sub);
+      line-height: 1.9;
+      font-size: 1rem;
+      font-weight: 400;
     }
 
-    .rp-body{
-      color:#c3c8cf;
-      line-height:2;
-      font-size:1rem;
+    .rp-body p + p {
+      margin-top: 20px;
     }
 
-    .rp-body p+p{margin-top:20px;}
-
-    .rp-highlight{
-      margin-top:34px;
-      padding:28px;
-      border-left:2px solid rgba(255,255,255,.18);
-      background:#0d0d0d;
-      border-radius:0 18px 18px 0;
-      color:#fff;
-      font-weight:700;
+    .rp-highlight {
+      margin-top: 40px;
+      padding: 24px 30px;
+      border-left: 4px solid var(--border-dark);
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: .95rem;
+      line-height: 1.8;
     }
 
-    /* ── CATEGORIES ── */
-    .rp-cat-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+    /* ── CATEGORIES (FIXED GLITCH) ── */
+    .rp-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
     }
 
-    .rp-cat{
-      background:#0c0c0d;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:28px;
-      padding:40px 30px;
-      text-align:center;
+    .rp-cat {
+      background: var(--bg);
+      border: 1px solid var(--border-dark);
+      padding: 48px 30px;
+      text-align: center;
+      transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
+      cursor: pointer;
+    }
+    
+    .rp-cat:hover {
+      background: var(--accent);
+      color: var(--accent-text);
+      transform: translateY(-4px);
     }
 
-    .rp-cat-km{
-      font-size:clamp(3rem,7vw,5.5rem);
-      font-weight:900;
-      line-height:1;
-      letter-spacing:-.05em;
-      color:#fff;
+    .rp-cat:hover .rp-cat-km,
+    .rp-cat:hover .rp-cat-unit {
+      color: var(--accent-text);
     }
 
-    .rp-cat-unit{
-      font-size:1rem;
-      font-weight:700;
-      color:#6d7278;
-      margin-top:4px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+    .rp-cat-km {
+      font-family: 'Barlow', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.07em;
+      color: var(--text-main);
+      transition: color 0.4s ease;
+    }
+
+    .rp-cat-unit {
+      font-family: 'Barlow', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-top: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color 0.4s ease;
     }
 
     /* ── RUNDOWN ── */
-    .rp-rundown-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
+    .rp-rundown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
 
-    .rp-rundown-day{
-      background:#0c0c0d;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:28px;
-      padding:34px;
+    .rp-rundown-day {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 40px;
+      transition: border-color 0.3s ease;
     }
 
-    .rp-rundown-date{
-      font-size:.75rem;
-      font-weight:800;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:#a259ff;
-      margin-bottom:20px;
+    .rp-rundown-day:hover {
+      border-color: var(--border-dark);
     }
 
-    .rp-rundown-item{
-      display:flex;
-      gap:18px;
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,.04);
+    .rp-rundown-date {
+      font-family: 'Barlow', sans-serif;
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      margin-bottom: 28px;
     }
 
-    .rp-rundown-item:last-child{border-bottom:none;}
-
-    .rp-rundown-time{
-      font-size:.78rem;
-      font-weight:800;
-      color:#6d7278;
-      min-width:100px;
-      flex-shrink:0;
+    .rp-rundown-item {
+      display: flex;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .rp-rundown-act{
-      font-size:.9rem;
-      font-weight:600;
-      color:#c3c8cf;
-      line-height:1.5;
+    .rp-rundown-item:last-child {
+      border-bottom: none;
+    }
+
+    .rp-rundown-time {
+      font-family: 'Barlow', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      min-width: 100px;
+      flex-shrink: 0;
+      letter-spacing: .05em;
+    }
+
+    .rp-rundown-act {
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      line-height: 1.5;
     }
 
     /* ── FEATURES ── */
-    .rp-feature-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;
+    .rp-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
-    .rp-feature{
-      background:#0c0c0d;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:28px;
-      padding:34px;
+    .rp-feature {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 40px;
+      transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), border-color .4s ease;
+    }
+    
+    .rp-feature:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-dark);
     }
 
-    .rp-icon{
-      width:68px;
-      height:68px;
-      border-radius:18px;
-      background:#151515;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:1.8rem;
+    .rp-feature-title {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -.02em;
+      text-transform: uppercase;
     }
 
-    .rp-feature-title{
-      margin-top:22px;
-      font-size:1.18rem;
-      font-weight:900;
-      color:#fff;
-    }
-
-    .rp-feature-desc{
-      margin-top:14px;
-      line-height:1.9;
-      color:#9ea4ac;
-      font-size:.95rem;
+    .rp-feature-desc {
+      margin-top: 16px;
+      line-height: 1.8;
+      color: var(--text-sub);
+      font-size: .95rem;
+      font-weight: 400;
     }
 
     /* ── PRODUCT SHOWCASE ── */
-    .rp-product-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+    .rp-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .rp-product-card{
-      border-radius:28px;
-      overflow:hidden;
-      position:relative;
-      background:#0c0c0d;
-      border:1px solid rgba(255,255,255,.06);
+    .rp-product-card {
+      overflow: hidden;
+      position: relative;
+      background: var(--bg);
+      border: 1px solid var(--border-dark);
+      cursor: pointer;
     }
 
-    .rp-product-card img{
-      width:100%;
-      height:400px;
-      object-fit:cover;
-      transition:transform .6s ease;
+    .rp-product-card img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1), filter .8s ease;
     }
 
-    .rp-product-card:hover img{transform:scale(1.04);}
-
-    .rp-product-overlay{
-      position:absolute;
-      bottom:0;left:0;right:0;
-      padding:28px;
-      background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);
+    .rp-product-card:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
     }
 
-    .rp-product-name{
-      font-size:1rem;
-      font-weight:900;
-      color:#fff;
-      text-transform:uppercase;
-      letter-spacing:.06em;
+    .rp-product-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 32px;
+      background: linear-gradient(0deg, rgba(255,255,255,1), rgba(255,255,255,0.8) 60%, transparent);
     }
 
-    .rp-product-sub{
-      font-size:.78rem;
-      color:#9ea4ac;
-      margin-top:6px;
-      font-weight:600;
+    .rp-product-name {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: .08em;
     }
 
-    /* ── PHOTO CONTEST ── */
-    .rp-contest{
-      position:relative;
-      overflow:hidden;
-      border-radius:40px;
-      padding:80px 60px;
-      background:
-        linear-gradient(135deg,rgba(10,10,10,.94),rgba(30,10,50,.88)),
-        url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU')
-        center/cover no-repeat;
-      border:1px solid rgba(123,47,255,.2);
+    .rp-product-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      color: var(--text-sub);
+      margin-top: 8px;
+      font-weight: 500;
+      letter-spacing: .04em;
     }
 
-    .rp-contest::before{
-      content:'';
-      position:absolute;
-      top:-80px;right:-80px;
-      width:400px;height:400px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(123,47,255,.18),transparent 70%);
+    /* ── PHOTO CONTEST & BANNER ── */
+    .rp-contest, .rp-banner {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 80px;
+      border: 1px solid var(--border-dark);
+      background: var(--card-bg);
     }
 
-    .rp-contest-content{
-      position:relative;
-      z-index:2;
+    .rp-contest-bg, .rp-banner-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU') center/cover no-repeat;
+      filter: grayscale(100%) opacity(0.15);
+      z-index: 0;
+    }
+    
+    .rp-banner-bg {
+      background-image: url('https://lh3.googleusercontent.com/d/1N7Qjys5QmB312gUGBm9AWxU_u9SuOsYA');
     }
 
-    .rp-contest-title{
-      font-size:clamp(2.5rem,6vw,5rem);
-      line-height:.92;
-      font-weight:900;
-      letter-spacing:-.05em;
+    .rp-contest-content, .rp-banner-content {
+      position: relative;
+      z-index: 2;
     }
 
-    .rp-contest-title span{color:#a259ff;}
-
-    .rp-contest-sub{
-      margin-top:20px;
-      color:#c4c9d0;
-      font-size:1.08rem;
-      line-height:1.8;
-      max-width:600px;
+    .rp-contest-title, .rp-banner-title {
+      font-family: 'Barlow', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      color: var(--text-main);
     }
 
-    .rp-contest-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      margin-top:48px;
+    .rp-contest-title span, .rp-banner-title span {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--text-main);
     }
 
-    .rp-contest-box{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:28px;
+    .rp-contest-sub, .rp-banner-text {
+      margin-top: 24px;
+      color: var(--text-sub);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      max-width: 700px;
+      font-weight: 400;
     }
 
-    .rp-contest-box-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:.8rem;
-      font-weight:900;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#a259ff;
-      margin-bottom:18px;
+    .rp-contest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 54px;
     }
 
-    .rp-contest-items{
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .rp-contest-box {
+      background: var(--bg);
+      border: 1px solid var(--border-dark);
+      padding: 40px;
     }
 
-    .rp-contest-items li{
-      font-size:.88rem;
-      color:#c3c8cf;
-      font-weight:600;
-      padding-left:20px;
-      position:relative;
-      line-height:1.6;
+    .rp-contest-box-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      margin-bottom: 24px;
     }
 
-    .rp-contest-items li::before{
-      content:'✦';
-      position:absolute;
-      left:0;
-      color:#a259ff;
-      font-size:.7rem;
+    .rp-contest-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .rp-contest-deadline{
-      margin-top:40px;
-      display:flex;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
+    .rp-contest-items li {
+      font-size: .95rem;
+      color: var(--text-sub);
+      font-weight: 400;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
     }
 
-    .rp-deadline-box{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:18px 24px;
-      background:rgba(123,47,255,.14);
-      border:1px solid rgba(123,47,255,.3);
-      border-radius:16px;
+    .rp-contest-items li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--text-main);
+      font-weight: 800;
     }
 
-    .rp-deadline-label{
-      font-size:.7rem;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#a259ff;
+    .rp-contest-deadline {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
 
-    .rp-deadline-date{
-      font-size:1.1rem;
-      font-weight:900;
-      color:#fff;
+    .rp-deadline-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 28px;
+      background: var(--bg);
+      border: 1px solid var(--border-dark);
     }
 
-    .rp-submit-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:18px 32px;
-      border-radius:999px;
-      background:#fff;
-      color:#000;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      font-size:.82rem;
-      text-decoration:none;
-      transition:opacity .2s;
+    .rp-deadline-label {
+      font-family: 'Barlow', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-sub);
     }
 
-    .rp-submit-btn:hover{opacity:.88;}
-
-    /* ── BANNER ── */
-    .rp-banner{
-      position:relative;
-      overflow:hidden;
-      border-radius:40px;
-      padding:80px 60px;
-      background:
-        linear-gradient(135deg,rgba(10,10,10,.92),rgba(25,25,25,.82)),
-        url('https://lh3.googleusercontent.com/d/1N7Qjys5QmB312gUGBm9AWxU_u9SuOsYA')
-        center/cover no-repeat;
+    .rp-deadline-date {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-top: 4px;
     }
 
-    .rp-banner::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+    .rp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 24px 48px;
+      background: var(--accent);
+      color: var(--accent-text);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: .85rem;
+      text-decoration: none;
+      transition: background .3s ease, color .3s ease;
+      border: 1px solid var(--accent);
+      cursor: pointer;
     }
 
-    .rp-banner-content{
-      position:relative;
-      z-index:2;
-      max-width:820px;
-    }
-
-    .rp-banner-title{
-      font-size:clamp(2.5rem,6vw,5rem);
-      line-height:.92;
-      font-weight:900;
-      letter-spacing:-.05em;
-    }
-
-    .rp-banner-title span{color:#7b7f86;}
-
-    .rp-banner-text{
-      margin-top:26px;
-      color:#c4c9d0;
-      line-height:2;
-      max-width:700px;
-    }
-
-    .rp-coming{
-      margin-top:38px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px 32px;
-      border-radius:999px;
-      background:#fff;
-      color:#000;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.08em;
+    .rp-btn:hover {
+      background: var(--bg);
+      color: var(--accent);
     }
 
     /* ── FOOTER ── */
-    .rp-footer{
-      padding:70px 28px;
-      border-top:1px solid rgba(255,255,255,.08);
-      background:#050505;
-      text-align:center;
+    .rp-footer {
+      padding: 80px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border-dark);
+      text-align: center;
     }
 
-    .rp-footer-logo{
-      font-size:1.6rem;
-      font-weight:900;
-      color:#fff;
-      letter-spacing:-.04em;
+    .rp-footer-logo {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -.02em;
     }
 
-    .rp-footer-copy{
-      margin-top:16px;
-      color:#818891;
-      font-size:.92rem;
-      line-height:1.8;
+    .rp-footer-copy {
+      margin-top: 24px;
+      color: var(--text-sub);
+      font-size: .95rem;
+      line-height: 2;
     }
 
-    .rp-footer-links{
-      margin-top:22px;
-      display:flex;
-      justify-content:center;
-      gap:24px;
-      flex-wrap:wrap;
+    .rp-footer-links {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
     }
 
-    .rp-footer-link{
-      font-size:.82rem;
-      font-weight:700;
-      color:#a259ff;
-      text-decoration:none;
-      letter-spacing:.06em;
+    .rp-footer-link {
+      font-family: 'Barlow', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .3s;
+    }
+    
+    .rp-footer-link:hover {
+      color: var(--text-sub);
     }
 
     /* ── RESPONSIVE ── */
-    @media(max-width:980px){
-      .rp-grid,.rp-rundown-grid,.rp-contest-grid{grid-template-columns:1fr;}
-      .rp-image img{height:500px;}
-      .rp-cat-grid,.rp-product-grid{grid-template-columns:1fr;}
+    @media(max-width: 1024px) {
+      .rp-grid, .rp-rundown-grid, .rp-contest-grid { grid-template-columns: 1fr; }
+      .rp-image img { height: 500px; }
+      .rp-cat-grid, .rp-product-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media(max-width:860px){
-      .rp-section{padding:90px 22px;}
-      .rp-title{font-size:4.2rem;}
-      .rp-strip{width:100%;flex-direction:column;}
-      .rp-box{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
-      .rp-box:last-child{border-bottom:none;}
-      .rp-banner,.rp-contest{padding:50px 34px;}
-      .rp-cat-grid{grid-template-columns:1fr 1fr;}
-      .rp-product-grid{grid-template-columns:1fr 1fr;}
+    @media(max-width: 768px) {
+      .rp-section { padding: 80px 0; }
+      .rp-title { font-size: 4rem; }
+      .rp-strip { width: 100%; flex-direction: column; }
+      .rp-box { border-right: none; border-bottom: 1px solid var(--border-dark); }
+      .rp-box:last-child { border-bottom: none; }
+      .rp-banner, .rp-contest { padding: 60px 32px; }
+      .rp-cat-grid, .rp-product-grid { grid-template-columns: 1fr; }
+      .rp-cat-km { font-size: 5rem; }
     }
 
-    @media(max-width:520px){
-      .rp-cat-grid,.rp-product-grid{grid-template-columns:1fr;}
+    @media(max-width: 480px) {
+      .rp-wrap { padding: 0 20px; }
+      .rp-title { font-size: 3.2rem; }
+      .rp-heading { font-size: 2.2rem; }
+      .rp-contest-title, .rp-banner-title { font-size: 2.2rem; }
+      .rp-btn { width: 100%; padding: 20px 0; }
+      .rp-deadline-box { width: 100%; justify-content: center; text-align: center; }
+      .rp-contest-deadline { flex-direction: column; gap: 16px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="rp-garmin">
-
   <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
-  <section class="rp-section rp-hero">
+  <section class="rp-hero">
+    <div class="rp-hero-bg"></div>
+    <div class="rp-hero-overlay"></div>
     <div class="rp-wrap">
       <div class="rp-content">
-
         <div class="rp-badge">
           <span class="rp-badge-dot"></span>
           COMING SOON • OCTOBER 2026 • BSD CITY
@@ -725,7 +762,7 @@
           </div>
           <div class="rp-box">
             <div class="rp-label">Powered By</div>
-            <div class="rp-value accent">IZT Race Technology</div>
+            <div class="rp-value">IZT Race Technology</div>
           </div>
         </div>
 
@@ -735,7 +772,6 @@
           <div class="rp-tag">5 KM</div>
           <div class="rp-tag">BSD City</div>
         </div>
-
       </div>
     </div>
   </section>
@@ -743,7 +779,6 @@
   <!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
   <section class="rp-section">
     <div class="rp-wrap">
-
       <div class="rp-heading-label">Tentang Event</div>
       <div class="rp-heading">Dirancang Untuk <span>Pelari Modern</span></div>
       <div class="rp-divider"></div>
@@ -774,14 +809,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ CATEGORIES ══════════════════════════════ -->
-  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
+  <section class="rp-section rp-section-dark">
     <div class="rp-wrap">
-
       <div class="rp-heading-label">Race Categories</div>
       <div class="rp-heading">Pilih <span>Jarakmu</span></div>
       <div class="rp-divider"></div>
@@ -800,22 +833,19 @@
           <div class="rp-cat-unit">Kilometer · Fun Run</div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ RUNDOWN ══════════════════════════════ -->
   <section class="rp-section">
     <div class="rp-wrap">
-
       <div class="rp-heading-label">Schedule</div>
       <div class="rp-heading">Rundown <span>Event</span></div>
       <div class="rp-divider"></div>
 
       <div class="rp-rundown-grid">
-
         <div class="rp-rundown-day">
-          <div class="rp-rundown-date">📅 Race Pack Collection — October 2026 </div>
+          <div class="rp-rundown-date">📅 Race Pack Collection — October 2026</div>
           <div class="rp-rundown-item">
             <div class="rp-rundown-time">08.00 – 17.00</div>
             <div class="rp-rundown-act">Pengambilan Race Pack</div>
@@ -853,20 +883,17 @@
             <div class="rp-rundown-act">Hiburan &amp; Penutupan</div>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ PHOTO CONTEST ══════════════════════════════ -->
-  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
+  <section class="rp-section rp-section-dark">
     <div class="rp-wrap">
-
       <div class="rp-contest">
+        <div class="rp-contest-bg"></div>
         <div class="rp-contest-content">
-
-          <div class="rp-heading-label" style="color:rgba(162,89,255,.7);">Photo Contest</div>
+          <div class="rp-heading-label">Photo Contest</div>
           <div class="rp-contest-title">
             ARE YOU READY TO<br>BE THE NEXT<br>
             <span>RPHM FLYER MODEL?</span>
@@ -909,21 +936,18 @@
                 <div class="rp-deadline-date">15 Juni 2026</div>
               </div>
             </div>
-            <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="rp-submit-btn">
+            <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="rp-btn">
               Submit Here →
             </a>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ PRODUCT SHOWCASE ══════════════════════════════ -->
   <section class="rp-section">
     <div class="rp-wrap">
-
       <div class="rp-heading-label">Rudy Project UTMB Collection</div>
       <div class="rp-heading">Performa Dimulai <span>Dari Sini</span></div>
       <div class="rp-divider"></div>
@@ -951,21 +975,18 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ PREMIUM FEATURES ══════════════════════════════ -->
-  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
+  <section class="rp-section rp-section-dark">
     <div class="rp-wrap">
-
       <div class="rp-heading-label">Premium Experience</div>
       <div class="rp-heading">Lebih Dari Sekadar <span>Sebuah Race</span></div>
       <div class="rp-divider"></div>
 
       <div class="rp-feature-grid">
         <div class="rp-feature">
-          <div class="rp-icon">🏃</div>
           <div class="rp-feature-title">Celebrity Running Culture</div>
           <div class="rp-feature-desc">
             Berlari bersama selebriti, influencer, atlet nasional, dan komunitas performa
@@ -973,7 +994,6 @@
           </div>
         </div>
         <div class="rp-feature">
-          <div class="rp-icon">⚡</div>
           <div class="rp-feature-title">International Race Standard</div>
           <div class="rp-feature-desc">
             Dibangun dengan timing profesional dari IZT Race Technology, alur race elite,
@@ -981,7 +1001,6 @@
           </div>
         </div>
         <div class="rp-feature">
-          <div class="rp-icon">🕶️</div>
           <div class="rp-feature-title">Rudy Project Lifestyle</div>
           <div class="rp-feature-desc">
             Brand olahraga performa mewah asal Italia yang memadukan budaya lari,
@@ -989,7 +1008,6 @@
           </div>
         </div>
         <div class="rp-feature">
-          <div class="rp-icon">🎤</div>
           <div class="rp-feature-title">Entertainment Atmosphere</div>
           <div class="rp-feature-desc">
             Musik, aktivasi sosial, kehadiran media, bazar UMKM, engagement komunitas,
@@ -997,7 +1015,6 @@
           </div>
         </div>
         <div class="rp-feature">
-          <div class="rp-icon">🏅</div>
           <div class="rp-feature-title">Podium Prize &amp; Awards</div>
           <div class="rp-feature-desc">
             Penghargaan bergengsi untuk pemenang setiap kategori dengan upacara
@@ -1005,7 +1022,6 @@
           </div>
         </div>
         <div class="rp-feature">
-          <div class="rp-icon">🌏</div>
           <div class="rp-feature-title">Sport Tourism Impact</div>
           <div class="rp-feature-desc">
             Berkontribusi pada pertumbuhan sport tourism Indonesia, mendukung pariwisata
@@ -1013,56 +1029,49 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ OFFICIAL COLLAB BANNER ══════════════════════════════ -->
-  <section class="rp-section" style="background:#050506;border-top:1px solid rgba(255,255,255,.04);">
+  <section class="rp-section">
     <div class="rp-wrap">
-
       <div class="rp-banner">
+        <div class="rp-banner-bg"></div>
         <div class="rp-banner-content">
-
           <div class="rp-heading-label">Official Collaboration</div>
-
           <div class="rp-banner-title">
             RUDY PROJECT INDONESIA<br>
             <span>BY ARRAS PROJECT</span>
           </div>
-
           <div class="rp-banner-text">
             Half marathon premium yang menggabungkan performa olahraga, celebrity culture,
             aktivasi komunitas, dan atmosfer race mewah — dengan teknologi timing
             bertenaga IZT Race Technology. Diselenggarakan Agustus 2026 di BSD City, Tangerang, Banten.
           </div>
-
-          <div class="rp-coming">
-            Registration Opening Soon
+          <div style="margin-top:48px;">
+            <span class="rp-btn">Registration Opening Soon</span>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
   <footer class="rp-footer">
-    <div class="rp-footer-logo">RUDY PROJECT HALF MARATHON 2026</div>
-    <div class="rp-footer-copy">
-      Rudy Project Indonesia · PT. Arras Protama Sejahtera · IZT Race Technology<br>
-      Icon Business Park 5 Blok F No. 6, Sampora, Cisauk, Tangerang, Banten 15345<br>
-      +62 811-880-944 · arrasadventures@gmail.com
-    </div>
-    <div class="rp-footer-links">
-      <a href="https://instagram.com/rudyprojectid" class="rp-footer-link">@rudyprojectid</a>
-      <a href="https://instagram.com/arrasadventure" class="rp-footer-link">@arrasadventure</a>
-      <a href="mailto:socialmediarpid@gmail.com" class="rp-footer-link">socialmediarpid@gmail.com</a>
+    <div class="rp-wrap">
+      <div class="rp-footer-logo">RUDY PROJECT HALF MARATHON 2026</div>
+      <div class="rp-footer-copy">
+        Rudy Project Indonesia · PT. Arras Protama Sejahtera · IZT Race Technology<br>
+        Icon Business Park 5 Blok F No. 6, Sampora, Cisauk, Tangerang, Banten 15345<br>
+        +62 811-880-944 · arrasadventures@gmail.com
+      </div>
+      <div class="rp-footer-links">
+        <a href="https://instagram.com/rudyprojectid" class="rp-footer-link">@rudyprojectid</a>
+        <a href="https://instagram.com/arrasadventure" class="rp-footer-link">@arrasadventure</a>
+        <a href="mailto:socialmediarpid@gmail.com" class="rp-footer-link">socialmediarpid@gmail.com</a>
+      </div>
     </div>
   </footer>
-
-  </div>
 
 </body>
 </html>
