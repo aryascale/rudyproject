@@ -130,7 +130,7 @@
     }
 
     /* ── 2. ABOUT LAYERED DEPTH ── */
-    .about { padding: 150px 0; border-bottom: 1px solid var(--border); }
+    .about { padding: 100px 0; border-bottom: 1px solid var(--border); }
     .about-wrap { display: flex; align-items: center; position: relative; }
     .about-img {
       width: 60%; position: relative; z-index: 1;
@@ -146,8 +146,8 @@
       border: 1px solid rgba(255,255,255,0.1); border-radius: 24px;
       box-shadow: -10px 20px 40px rgba(0,0,0,0.5);
     }
-    .about-title { font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 0.95; margin-bottom: 30px; letter-spacing: -0.02em; }
-    .about-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-sub); margin-bottom: 20px; }
+    .about-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 20px; letter-spacing: -0.02em; word-wrap: break-word; }
+    .about-text p { font-size: clamp(0.9rem, 2.5vw, 1.05rem); line-height: 1.8; color: var(--text-sub); margin-bottom: 20px; }
 
     /* ── 3. CATEGORIES WITH IMAGES (JARAK LARI) ── */
     .cat-sec { padding: 150px 0; background: var(--bg); border-bottom: 1px solid var(--border); }
@@ -208,30 +208,29 @@
       color: #ddd;
     }
 
-    /* ── 4. SHOWCASE PRODUCT (Fixed Glassmorphism overlay) ── */
-    .showcase { padding: 150px 0; background: var(--bg); overflow: hidden; }
-    .sc-title { text-align: center; font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 100px; }
-    .sc-grid { display: flex; justify-content: center; align-items: center; perspective: 1500px; }
+    /* ── 4. SHOWCASE PRODUCT (Garmin Style) ── */
+    .showcase { padding: 100px 0; background: var(--bg); overflow: hidden; }
+    .sc-header { margin-bottom: 60px; max-width: 1280px; margin-left: auto; margin-right: auto; }
+    .sc-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; color: #8f949b; text-transform: uppercase; margin-bottom: 16px; }
+    .sc-title { font-family: 'Barlow', sans-serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 900; text-transform: uppercase; line-height: 0.92; color: #fff; letter-spacing: -0.05em; }
+    .sc-title span { color: #6f7378; }
+    .sc-title::after { content: ''; display: block; width: 80px; height: 2px; background: #fff; opacity: 0.12; margin-top: 32px; }
+    
+    .sc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1280px; margin: 0 auto; }
     .sc-card {
-      position: relative; width: 340px; height: 500px; background: #111;
-      border: 1px solid #333; border-radius: 24px; overflow: hidden;
-      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer;
+      position: relative; border-radius: 28px; overflow: hidden;
+      background: #0c0c0d; border: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .sc-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.6s ease; }
+    .sc-card img { width: 100%; height: 400px; object-fit: cover; transition: transform 0.6s ease; }
+    .sc-card:hover img { transform: scale(1.04); }
+    
     .sc-info {
-      position: absolute; bottom: 20px; left: 20px; right: 20px;
-      background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateY(10px); opacity: 0.9; transition: all 0.4s ease;
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.85), transparent);
+      padding: 28px;
     }
-    .sc-info h4 { font-family: 'Barlow', sans-serif; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 4px; }
-    .sc-info p { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; color: #aaa; }
-    .sc-card-1 { transform: rotateY(15deg) translateZ(-50px); z-index: 1; margin-right: -40px; box-shadow: -15px 15px 0px rgba(0,0,0,0.05); }
-    .sc-card-2 { transform: translateZ(50px); z-index: 3; box-shadow: 0px 25px 50px rgba(0,0,0,0.15); }
-    .sc-card-3 { transform: rotateY(-15deg) translateZ(-50px); z-index: 2; margin-left: -40px; box-shadow: 15px 15px 0px rgba(0,0,0,0.05); }
-    .sc-card:hover { transform: translateZ(150px) scale(1.05); z-index: 10; box-shadow: 0px 40px 80px rgba(0,0,0,0.25); }
-    .sc-card:hover img { filter: grayscale(0%); }
-    .sc-card:hover .sc-info { transform: translateY(0); opacity: 1; }
+    .sc-info h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 900; text-transform: uppercase; color: #fff; margin-bottom: 6px; letter-spacing: 0.06em; }
+    .sc-info p { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; color: #9ea4ac; margin: 0; }
 
     /* ── 5. RUNDOWN TIMELINE (Mathematically Perfect & Neat) ── */
     .rundown { padding: 150px 0; border-top: 1px solid var(--border); background: var(--bg); }
@@ -343,20 +342,24 @@
     @media(max-width: 1024px) {
       .about-wrap { flex-direction: column; }
       .about-img { width: 100%; }
-      .about-text { width: 90%; position: relative; margin-top: -80px; right: auto; }
-      .cat-grid { grid-template-columns: 1fr; }
+      .about-img img { height: 500px; }
+      .about-text { width: 95%; position: relative; margin-top: -80px; right: auto; padding: 40px 30px; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
       .cat-card { height: 300px; }
-      .sc-grid { flex-direction: column; gap: 40px; perspective: none; }
-      .sc-card { transform: none !important; margin: 0 !important; box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; width: 100%; max-width: 400px; }
-      .sc-card:hover { transform: translateY(-10px) !important; }
+      .sc-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
     }
     @media(max-width: 768px) {
-      .hero-title { font-size: 4rem; }
-      .about-title { font-size: 2.5rem; }
+      .hero-title { font-size: 3.5rem; }
       .feat-item { flex-direction: column; gap: 16px; }
       .feat-num { font-size: 2rem; min-width: auto; }
       .contest-title { font-size: 3rem; }
       .af-dir { flex-direction: column; }
+      .about-text { padding: 30px 20px; }
+    }
+    @media(max-width: 520px) {
+      .cat-grid { grid-template-columns: 1fr; }
+      .sc-grid { grid-template-columns: 1fr; }
+      .about-img img { height: 400px; }
     }
   </style>
 </head>
@@ -389,7 +392,7 @@
     <div class="wrap">
       <div class="about-wrap">
         <div class="about-img">
-          <img src="https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU" alt="About Event">
+          <img src="assets/julita.jpeg" alt="About Event">
         </div>
         <div class="about-text">
           <div class="about-title">Dirancang Untuk Pelari Modern</div>
@@ -414,7 +417,7 @@
       <div class="cat-head">Pilih Jarakmu</div>
       <div class="cat-grid">
         <a href="#" class="cat-card">
-          <div class="cat-card-bg" style="background-image: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9');"></div>
+          <div class="cat-card-bg" style="background-image: url('assets/21.jpeg'); filter: grayscale(0%);"></div>
           <div class="cat-card-overlay"></div>
           <div class="cat-content">
             <div class="cat-num">21</div>
@@ -441,26 +444,29 @@
     </div>
   </section>
 
-  <!-- SHOWCASE PRODUCT (3D Hover with Glassmorphism Overlay) -->
+  <!-- SHOWCASE PRODUCT (Flat Grid with Bottom Gradient) -->
   <section class="showcase">
     <div class="wrap">
-      <div class="sc-title">Performa Dimulai Dari Sini</div>
+      <div class="sc-header">
+        <div class="sc-eyebrow">Rudy Project UTMB Collection</div>
+        <div class="sc-title">Performa Dimulai <span>Dari Sini</span></div>
+      </div>
       <div class="sc-grid">
-        <div class="sc-card sc-card-1">
+        <div class="sc-card">
           <img src="https://lh3.googleusercontent.com/d/1zZYZohnoTXpKmny2F5NOPKFMlQIZXklt" alt="Product 1">
           <div class="sc-info">
             <h4>UTMB Series</h4>
             <p>Trail Performance Eyewear</p>
           </div>
         </div>
-        <div class="sc-card sc-card-2">
+        <div class="sc-card">
           <img src="https://lh3.googleusercontent.com/d/1157xlZqJcsyU0g6eOKwWDtS8Q4z5ql-4" alt="Product 2">
           <div class="sc-info">
-            <h4>Astral X Desert</h4>
-            <p>Advanced Photochromic Tech</p>
+            <h4>Astral X Desert Matte</h4>
+            <p>Advanced Photochromic Technology</p>
           </div>
         </div>
-        <div class="sc-card sc-card-3">
+        <div class="sc-card">
           <img src="https://lh3.googleusercontent.com/d/1amDuh_Rj3VMO7IrdgDyallFwV0esDepX" alt="Product 3">
           <div class="sc-info">
             <h4>Designed in Italy</h4>
