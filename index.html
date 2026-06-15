@@ -4,931 +4,587 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rudy Project Half Marathon 2026</title>
-  <meta name="description" content="Rudy Project Half Marathon 2026 hadir sebagai perayaan HUT Rudy Project ke-24 tahun di BSD City, Tangerang.">
+  <meta name="description" content="Rudy Project Half Marathon 2026 hadir di BSD City, Tangerang.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #ffffff;
-      --text-main: #000000;
+      --text: #000000;
       --text-sub: #666666;
       --border: #e5e5e5;
-      --border-dark: #000000;
-      --card-bg: #f8f8f8;
-      --accent: #000000;
-      --accent-text: #ffffff;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text-main);
-      overflow-x: hidden; /* Prevent horizontal scroll glitches */
+      color: var(--text);
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      margin: 0;
-      padding: 0;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Barlow', sans-serif; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Headings strictly use Barlow */
-    h1, h2, h3, h4, h5, h6, .font-heading {
-      font-family: 'Barlow', sans-serif;
-    }
-
-    .rp-wrap {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    .rp-section {
-      padding: 120px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 28px; }
     
-    .rp-section-dark {
-      background: var(--card-bg);
-    }
-
-    /* ── HERO ── */
-    .rp-hero {
+    /* ── 1. HERO MASSIVE TYPOGRAPHIC & ASYMMETRIC ── */
+    .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      overflow: hidden;
-      background: #fff;
-      padding: 0;
-      border-bottom: 1px solid var(--border-dark);
+      border-bottom: 1px solid #000;
     }
-
-    .rp-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed; /* Parallax effect */
-      filter: grayscale(100%) opacity(0.6); 
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9') center/cover fixed no-repeat;
+      filter: grayscale(100%);
+      opacity: 0.25; /* Very subtle so text pops */
       z-index: 0;
     }
-
-    .rp-hero-overlay {
+    .hero-content {
+      position: relative; z-index: 2;
+      width: 100%;
+    }
+    .hero-title {
+      font-size: clamp(4rem, 12vw, 11rem);
+      font-weight: 900;
+      line-height: 0.85;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      margin-left: -5px;
+    }
+    .hero-title .outline {
+      color: transparent;
+      -webkit-text-stroke: 2px #000;
+      display: block;
+    }
+    .hero-desc {
+      max-width: 450px;
+      margin-top: 40px;
+      margin-left: auto;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.8;
+      text-align: right;
+    }
+    /* Floating Badges */
+    .float-badge {
       position: absolute;
-      inset: 0;
-      /* Gradient that is lighter at the top to show the image, and fades to white at the bottom */
-      background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,1) 100%);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 3;
+    }
+    .fb-1 {
+      top: 100px; right: 40px;
+      background: #000; color: #fff;
+      padding: 12px 24px;
+    }
+    .fb-2 {
+      bottom: 80px; left: 40px;
+      background: #fff; color: #000;
+      border: 2px solid #000;
+      padding: 16px 32px;
+      font-size: 1.5rem;
+      transform: rotate(-5deg);
+      box-shadow: 8px 8px 0px #000;
+    }
+
+    /* ── 2. ABOUT LAYERED DEPTH ── */
+    .about { padding: 150px 0; border-bottom: 1px solid #000; }
+    .about-wrap {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .about-img {
+      width: 65%;
+      position: relative;
       z-index: 1;
     }
-
-    .rp-content {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
-      padding: 120px 0;
-    }
-
-    .rp-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 16px;
-      border: 1px solid var(--border-dark);
-      background: var(--bg);
-      font-family: 'Barlow', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--text-main);
-    }
-
-    .rp-badge-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--text-main);
-      animation: rp-pulse 2s infinite;
-    }
-
-    @keyframes rp-pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .3; transform: scale(.6); }
-    }
-
-    .rp-eyebrow {
-      margin-top: 32px;
-      font-family: 'Barlow', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .25em;
-      color: var(--text-sub);
-      text-transform: uppercase;
-    }
-
-    .rp-title {
-      margin-top: 22px;
-      font-family: 'Barlow', sans-serif;
-      font-size: clamp(3.5rem, 10vw, 8.5rem);
-      line-height: .85;
-      font-weight: 900;
-      letter-spacing: -.04em;
-      text-transform: uppercase;
-      color: var(--text-main);
-    }
-
-    .rp-title span {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--text-main);
-    }
-
-    .rp-subtitle {
-      margin-top: 32px;
-      max-width: 720px;
-      color: var(--text-sub);
-      font-size: 1.05rem;
-      line-height: 1.9;
-      font-weight: 400;
-    }
-
-    .rp-strip {
-      margin-top: 48px;
-      display: flex;
-      flex-wrap: wrap;
-      border: 1px solid var(--border-dark);
-      width: fit-content;
-      background: var(--bg);
-    }
-
-    .rp-box {
-      padding: 22px 28px;
-      min-width: 200px;
-      border-right: 1px solid var(--border-dark);
-    }
-
-    .rp-box:last-child {
-      border-right: none;
-    }
-
-    .rp-label {
-      font-family: 'Barlow', sans-serif;
-      font-size: .75rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-      font-weight: 700;
-    }
-
-    .rp-value {
-      margin-top: 10px;
-      font-family: 'Barlow', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text-main);
-      text-transform: uppercase;
-    }
-
-    .rp-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 40px;
-    }
-
-    .rp-tag {
-      padding: 10px 16px;
-      border: 1px solid var(--border-dark);
-      background: transparent;
-      color: var(--text-main);
-      font-family: 'Barlow', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    /* ── HEADINGS ── */
-    .rp-heading-label {
-      color: var(--text-sub);
-      font-family: 'Barlow', sans-serif;
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .rp-heading {
-      font-family: 'Barlow', sans-serif;
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      line-height: .95;
-      font-weight: 900;
-      letter-spacing: -.04em;
-      color: var(--text-main);
-      text-transform: uppercase;
-    }
-
-    .rp-heading span {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--text-main);
-    }
-
-    .rp-divider {
-      width: 80px;
-      height: 3px;
-      background: var(--text-main);
-      margin-top: 32px;
-      margin-bottom: 64px;
-    }
-
-    /* ── ABOUT GRID ── */
-    .rp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .rp-image {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--border-dark);
-    }
-
-    .rp-image img {
-      height: 720px;
+    .about-img img {
       width: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.2);
-    }
-
-    .rp-body {
-      color: var(--text-sub);
-      line-height: 1.9;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    .rp-body p + p {
-      margin-top: 20px;
-    }
-
-    .rp-highlight {
-      margin-top: 40px;
-      padding: 24px 30px;
-      border-left: 4px solid var(--border-dark);
-      background: var(--card-bg);
-      color: var(--text-main);
-      font-weight: 600;
-      font-size: .95rem;
-      line-height: 1.8;
-    }
-
-    /* ── CATEGORIES (FIXED GLITCH) ── */
-    .rp-cat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      width: 100%;
-    }
-
-    .rp-cat {
-      background: var(--bg);
-      border: 1px solid var(--border-dark);
-      padding: 48px 30px;
-      text-align: center;
-      transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
-      cursor: pointer;
-    }
-    
-    .rp-cat:hover {
-      background: var(--accent);
-      color: var(--accent-text);
-      transform: translateY(-4px);
-    }
-
-    .rp-cat:hover .rp-cat-km,
-    .rp-cat:hover .rp-cat-unit {
-      color: var(--accent-text);
-    }
-
-    .rp-cat-km {
-      font-family: 'Barlow', sans-serif;
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -.07em;
-      color: var(--text-main);
-      transition: color 0.4s ease;
-    }
-
-    .rp-cat-unit {
-      font-family: 'Barlow', sans-serif;
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--text-sub);
-      margin-top: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: color 0.4s ease;
-    }
-
-    /* ── RUNDOWN ── */
-    .rp-rundown-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .rp-rundown-day {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 40px;
-      transition: border-color 0.3s ease;
-    }
-
-    .rp-rundown-day:hover {
-      border-color: var(--border-dark);
-    }
-
-    .rp-rundown-date {
-      font-family: 'Barlow', sans-serif;
-      font-size: .85rem;
-      font-weight: 800;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--text-main);
-      margin-bottom: 28px;
-    }
-
-    .rp-rundown-item {
-      display: flex;
-      gap: 24px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .rp-rundown-item:last-child {
-      border-bottom: none;
-    }
-
-    .rp-rundown-time {
-      font-family: 'Barlow', sans-serif;
-      font-size: .85rem;
-      font-weight: 700;
-      color: var(--text-sub);
-      min-width: 100px;
-      flex-shrink: 0;
-      letter-spacing: .05em;
-    }
-
-    .rp-rundown-act {
-      font-size: .95rem;
-      font-weight: 500;
-      color: var(--text-main);
-      line-height: 1.5;
-    }
-
-    /* ── FEATURES ── */
-    .rp-feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .rp-feature {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 40px;
-      transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), border-color .4s ease;
-    }
-    
-    .rp-feature:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-dark);
-    }
-
-    .rp-feature-title {
-      font-family: 'Barlow', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--text-main);
-      letter-spacing: -.02em;
-      text-transform: uppercase;
-    }
-
-    .rp-feature-desc {
-      margin-top: 16px;
-      line-height: 1.8;
-      color: var(--text-sub);
-      font-size: .95rem;
-      font-weight: 400;
-    }
-
-    /* ── PRODUCT SHOWCASE ── */
-    .rp-product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .rp-product-card {
-      overflow: hidden;
-      position: relative;
-      background: var(--bg);
-      border: 1px solid var(--border-dark);
-      cursor: pointer;
-    }
-
-    .rp-product-card img {
-      width: 100%;
-      height: 440px;
+      height: 750px;
       object-fit: cover;
       filter: grayscale(100%);
-      transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1), filter .8s ease;
     }
-
-    .rp-product-card:hover img {
-      transform: scale(1.05);
-      filter: grayscale(0%);
-    }
-
-    .rp-product-overlay {
+    .about-text {
+      width: 45%;
+      background: #fff;
+      padding: 60px;
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 32px;
-      background: linear-gradient(0deg, rgba(255,255,255,1), rgba(255,255,255,0.8) 60%, transparent);
-    }
-
-    .rp-product-name {
-      font-family: 'Barlow', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text-main);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .rp-product-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: .85rem;
-      color: var(--text-sub);
-      margin-top: 8px;
-      font-weight: 500;
-      letter-spacing: .04em;
-    }
-
-    /* ── PHOTO CONTEST & BANNER ── */
-    .rp-contest, .rp-banner {
-      position: relative;
-      overflow: hidden;
-      padding: 100px 80px;
-      border: 1px solid var(--border-dark);
-      background: var(--card-bg);
-    }
-
-    .rp-contest-bg, .rp-banner-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed; /* Parallax effect */
-      filter: grayscale(100%) opacity(0.4);
-      z-index: 0;
-    }
-    
-    .rp-banner-bg {
-      background-image: url('https://lh3.googleusercontent.com/d/1N7Qjys5QmB312gUGBm9AWxU_u9SuOsYA');
-    }
-
-    .rp-contest-content, .rp-banner-content {
-      position: relative;
+      right: 0;
       z-index: 2;
+      border: 1px solid #000;
+      box-shadow: -20px 20px 0px #000;
     }
-
-    .rp-contest-title, .rp-banner-title {
-      font-family: 'Barlow', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 5.5rem);
-      line-height: .95;
+    .about-title {
+      font-size: 3.5rem;
       font-weight: 900;
-      letter-spacing: -.04em;
       text-transform: uppercase;
-      color: var(--text-main);
+      line-height: 0.9;
+      margin-bottom: 30px;
+      letter-spacing: -1px;
     }
-
-    .rp-contest-title span, .rp-banner-title span {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--text-main);
-    }
-
-    .rp-contest-sub, .rp-banner-text {
-      margin-top: 24px;
-      color: var(--text-sub);
-      font-size: 1.05rem;
-      line-height: 1.9;
-      max-width: 700px;
-      font-weight: 400;
-    }
-
-    .rp-contest-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 54px;
-    }
-
-    .rp-contest-box {
-      background: var(--bg);
-      border: 1px solid var(--border-dark);
-      padding: 40px;
-    }
-
-    .rp-contest-box-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Barlow', sans-serif;
+    .about-text p {
       font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--text-main);
-      margin-bottom: 24px;
-    }
-
-    .rp-contest-items {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .rp-contest-items li {
-      font-size: .95rem;
+      line-height: 1.9;
       color: var(--text-sub);
-      font-weight: 400;
-      padding-left: 24px;
-      position: relative;
-      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .rp-contest-items li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--text-main);
-      font-weight: 800;
-    }
-
-    .rp-contest-deadline {
-      margin-top: 48px;
+    /* ── CATEGORIES ── */
+    .cat-sec { padding: 120px 0; border-bottom: 1px solid #000; background: #fafafa; }
+    .cat-flex {
       display: flex;
+      justify-content: space-around;
       align-items: center;
-      gap: 24px;
       flex-wrap: wrap;
     }
-
-    .rp-deadline-box {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 20px 28px;
-      background: var(--bg);
-      border: 1px solid var(--border-dark);
+    .cat-item {
+      text-align: center;
+      transition: transform 0.4s ease;
     }
-
-    .rp-deadline-label {
+    .cat-num {
       font-family: 'Barlow', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-    }
-
-    .rp-deadline-date {
-      font-family: 'Barlow', sans-serif;
-      font-size: 1.25rem;
+      font-size: clamp(6rem, 15vw, 12rem);
       font-weight: 900;
-      color: var(--text-main);
-      margin-top: 4px;
+      line-height: 0.8;
+      letter-spacing: -0.05em;
+      transition: all 0.4s ease;
+    }
+    .cat-item:hover { transform: translateY(-20px); }
+    .cat-item:hover .cat-num { color: transparent; -webkit-text-stroke: 2px #000; }
+    .cat-label {
+      margin-top: 16px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #000;
     }
 
-    .rp-btn {
-      display: inline-flex;
-      align-items: center;
+    /* ── 3. SHOWCASE PRODUCT (3D Hover) ── */
+    .showcase { padding: 150px 0; border-bottom: 1px solid #000; overflow: hidden; }
+    .sc-title { text-align: center; font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 100px; }
+    .sc-grid {
+      display: flex;
       justify-content: center;
-      gap: 10px;
-      padding: 24px 48px;
-      background: var(--accent);
-      color: var(--accent-text);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      font-size: .85rem;
-      text-decoration: none;
-      transition: background .3s ease, color .3s ease;
-      border: 1px solid var(--accent);
+      align-items: center;
+      perspective: 1500px;
+    }
+    .sc-card {
+      position: relative;
+      width: 320px;
+      height: 480px;
+      background: #fff;
+      border: 1px solid #000;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       cursor: pointer;
     }
-
-    .rp-btn:hover {
-      background: var(--bg);
-      color: var(--accent);
+    .sc-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.6s ease;
     }
-
-    /* ── FOOTER ── */
-    .rp-footer {
-      padding: 80px 0;
-      background: var(--bg);
-      border-top: 1px solid var(--border-dark);
-      text-align: center;
-    }
-
-    .rp-footer-logo {
-      font-family: 'Barlow', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--text-main);
-      letter-spacing: -.02em;
-    }
-
-    .rp-footer-copy {
-      margin-top: 24px;
-      color: var(--text-sub);
-      font-size: .95rem;
-      line-height: 2;
-    }
-
-    .rp-footer-links {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .rp-footer-link {
-      font-family: 'Barlow', sans-serif;
-      font-size: .85rem;
-      font-weight: 700;
-      color: var(--text-main);
-      text-decoration: none;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      transition: color .3s;
-    }
+    .sc-card-1 { transform: rotateY(20deg) translateZ(-50px); z-index: 1; margin-right: -40px; box-shadow: -15px 15px 0px rgba(0,0,0,0.1); }
+    .sc-card-2 { transform: translateZ(50px); z-index: 3; box-shadow: 0px 25px 50px rgba(0,0,0,0.3); }
+    .sc-card-3 { transform: rotateY(-20deg) translateZ(-50px); z-index: 2; margin-left: -40px; box-shadow: 15px 15px 0px rgba(0,0,0,0.1); }
     
-    .rp-footer-link:hover {
-      color: var(--text-sub);
+    .sc-card:hover {
+      transform: translateZ(150px) scale(1.05);
+      z-index: 10;
+      box-shadow: 0px 40px 80px rgba(0,0,0,0.4);
+    }
+    .sc-card:hover img { filter: grayscale(0%); }
+
+    /* ── 4. RUNDOWN TIMELINE ── */
+    .rundown { padding: 150px 0; border-bottom: 1px solid #000; }
+    .rd-head { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 80px; text-align: center; }
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      border-left: 3px solid #000;
+      padding-left: 50px;
+      position: relative;
+    }
+    .tl-node {
+      position: relative;
+      margin-bottom: 60px;
+    }
+    .tl-node:last-child { margin-bottom: 0; }
+    .tl-node::before {
+      content: '';
+      position: absolute;
+      left: -58px; /* 50px padding + half border + half node */
+      top: 0;
+      width: 14px; height: 14px;
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 50%;
+    }
+    .tl-time {
+      display: inline-block;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+    }
+    .tl-title { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; }
+    .tl-desc { color: var(--text-sub); line-height: 1.6; }
+
+    /* ── 5. PHOTO CONTEST (DARK + SHADCN ACCORDION) ── */
+    .contest {
+      position: relative;
+      padding: 150px 0;
+      background: #000;
+      color: #fff;
+      border-bottom: 1px solid #000;
+    }
+    .contest-bg {
+      position: absolute; inset: 0;
+      background: url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU') center/cover fixed no-repeat;
+      filter: grayscale(100%);
+      opacity: 0.5; /* Keeping image visible clearly */
+      z-index: 0;
+    }
+    .contest-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 100%);
+      z-index: 1;
+    }
+    .contest-content { position: relative; z-index: 2; max-width: 800px; }
+    .contest-title {
+      font-size: 4.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 40px;
+    }
+    .contest-title span { color: transparent; -webkit-text-stroke: 1.5px #fff; }
+    
+    /* Shadcn Style Accordion CSS-Only */
+    .accordion-wrap { margin-top: 60px; }
+    details {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 24px 0;
+      transition: background 0.3s ease;
+    }
+    details:hover { background: rgba(255,255,255,0.03); }
+    summary {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    .det-body {
+      margin-top: 24px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+    .det-body ul { list-style: none; padding-left: 0; }
+    .det-body li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+    .det-body li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: #fff;
+    }
+
+    /* ── 6. PREMIUM FEATURES (BRUTALIST LIST) ── */
+    .features { padding: 150px 0; border-bottom: 1px solid #000; }
+    .feat-head { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 80px; }
+    .feat-list { display: flex; flex-direction: column; gap: 0; }
+    .feat-item {
+      display: flex;
+      gap: 40px;
+      padding: 40px 0;
+      border-top: 1px solid #000;
+      align-items: flex-start;
+    }
+    .feat-item:last-child { border-bottom: 1px solid #000; }
+    .feat-num {
+      font-family: 'Barlow', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 0.8;
+      color: transparent;
+      -webkit-text-stroke: 2px #000;
+      min-width: 100px;
+    }
+    .feat-text h4 { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 16px; }
+    .feat-text p { font-size: 1.05rem; color: var(--text-sub); line-height: 1.8; max-width: 700px; }
+
+    /* ── 7. BANNER REGISTRATION ── */
+    .banner { padding: 120px 0; text-align: center; position: relative; border-bottom: 1px solid #000; }
+    .banner-bg {
+      position: absolute; inset: 0;
+      background: url('https://lh3.googleusercontent.com/d/1N7Qjys5QmB312gUGBm9AWxU_u9SuOsYA') center/cover fixed no-repeat;
+      filter: grayscale(100%);
+      opacity: 0.15; z-index: 0;
+    }
+    .banner-content { position: relative; z-index: 2; }
+    .btn {
+      display: inline-flex;
+      background: #000;
+      color: #fff;
+      padding: 24px 54px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid #000;
+      margin-top: 50px;
+    }
+    .btn:hover { background: #fff; color: #000; }
+
+    /* ── 8. APPLE.COM STYLE FOOTER ── */
+    .apple-footer {
+      background: #f5f5f7;
+      padding: 40px 0 20px;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.33337;
+    }
+    .af-wrap { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+    .af-note {
+      color: #86868b;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #d2d2d7;
+      margin-bottom: 20px;
+    }
+    .af-dir {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .af-col { flex: 1; min-width: 200px; margin-bottom: 20px; }
+    .af-col h3 { font-size: 12px; font-weight: 600; color: #1d1d1f; margin-bottom: 10px; }
+    .af-col ul { list-style: none; padding: 0; margin: 0; }
+    .af-col li { margin-bottom: 8px; }
+    .af-col a { color: #515154; text-decoration: none; }
+    .af-col a:hover { text-decoration: underline; }
+    .af-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 15px;
+      border-top: 1px solid #d2d2d7;
+      color: #86868b;
     }
 
     /* ── RESPONSIVE ── */
     @media(max-width: 1024px) {
-      .rp-grid, .rp-rundown-grid, .rp-contest-grid { grid-template-columns: 1fr; }
-      .rp-image img { height: 500px; }
-      .rp-cat-grid, .rp-product-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-wrap { flex-direction: column; }
+      .about-img { width: 100%; }
+      .about-text { width: 90%; position: relative; margin-top: -80px; box-shadow: -10px 10px 0px #000; right: auto; }
+      .sc-grid { flex-direction: column; gap: 40px; perspective: none; }
+      .sc-card { transform: none !important; margin: 0 !important; box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; width: 100%; max-width: 400px; }
+      .sc-card:hover { transform: translateY(-10px) !important; }
     }
-
     @media(max-width: 768px) {
-      .rp-section { padding: 80px 0; }
-      .rp-title { font-size: 4rem; }
-      .rp-strip { width: 100%; flex-direction: column; }
-      .rp-box { border-right: none; border-bottom: 1px solid var(--border-dark); }
-      .rp-box:last-child { border-bottom: none; }
-      .rp-banner, .rp-contest { padding: 60px 32px; }
-      .rp-cat-grid, .rp-product-grid { grid-template-columns: 1fr; }
-      .rp-cat-km { font-size: 5rem; }
-    }
-
-    @media(max-width: 480px) {
-      .rp-wrap { padding: 0 20px; }
-      .rp-title { font-size: 3.2rem; }
-      .rp-heading { font-size: 2.2rem; }
-      .rp-contest-title, .rp-banner-title { font-size: 2.2rem; }
-      .rp-btn { width: 100%; padding: 20px 0; }
-      .rp-deadline-box { width: 100%; justify-content: center; text-align: center; }
-      .rp-contest-deadline { flex-direction: column; gap: 16px; }
+      .hero-title { font-size: 5rem; }
+      .fb-1, .fb-2 { display: none; }
+      .hero-desc { text-align: left; margin-left: 0; }
+      .about-title { font-size: 2.8rem; }
+      .cat-flex { flex-direction: column; gap: 40px; }
+      .timeline { padding-left: 30px; }
+      .tl-node::before { left: -38px; }
+      .feat-item { flex-direction: column; gap: 20px; }
+      .contest-title { font-size: 3rem; }
+      .af-dir { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
-  <section class="rp-hero">
-    <div class="rp-hero-bg"></div>
-    <div class="rp-hero-overlay"></div>
-    <div class="rp-wrap">
-      <div class="rp-content">
-        <div class="rp-badge">
-          <span class="rp-badge-dot"></span>
-          COMING SOON • OCTOBER 2026 • BSD CITY
+  <!-- HERO (Massive Asymmetric) -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-title">
+          RUDY PROJECT
+          <span class="outline">HALF MARATHON</span>
         </div>
-
-        <div class="rp-eyebrow">
-          Performance · Community · Sport Tourism · Lifestyle
-        </div>
-
-        <div class="rp-title">
-          RUDY PROJECT<br>
-          <span>HALF MARATHON</span>
-        </div>
-
-        <div class="rp-subtitle">
-          Pengalaman lari premium generasi baru hadir di BSD City, Tangerang — memadukan
-          semangat komunitas lari, budaya celebrity runner, teknologi balap terdepan,
-          dan atmosfer lifestyle olahraga modern yang sesungguhnya.
-        </div>
-
-        <div class="rp-strip">
-          <div class="rp-box">
-            <div class="rp-label">Tanggal</div>
-            <div class="rp-value">October 2026</div>
-          </div>
-          <div class="rp-box">
-            <div class="rp-label">Lokasi</div>
-            <div class="rp-value">BSD City, Tangerang</div>
-          </div>
-          <div class="rp-box">
-            <div class="rp-label">Kategori</div>
-            <div class="rp-value">21 KM · 10 KM · 5 KM</div>
-          </div>
-          <div class="rp-box">
-            <div class="rp-label">Powered By</div>
-            <div class="rp-value">IZT Race Technology</div>
-          </div>
-        </div>
-
-        <div class="rp-tags">
-          <div class="rp-tag">21 KM</div>
-          <div class="rp-tag">10 KM</div>
-          <div class="rp-tag">5 KM</div>
-          <div class="rp-tag">BSD City</div>
+        <div class="hero-desc">
+          Pengalaman lari premium generasi baru hadir di BSD City, Tangerang — memadukan semangat komunitas lari, budaya celebrity runner, dan teknologi balap terdepan.
         </div>
       </div>
     </div>
+    <div class="float-badge fb-1">IZT Race Technology</div>
+    <div class="float-badge fb-2">BSD CITY · OCT 2026</div>
   </section>
 
-  <!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
-  <section class="rp-section">
-    <div class="rp-wrap">
-      <div class="rp-heading-label">Tentang Event</div>
-      <div class="rp-heading">Dirancang Untuk <span>Pelari Modern</span></div>
-      <div class="rp-divider"></div>
-
-      <div class="rp-grid">
-        <div class="rp-image">
-          <img src="https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU" alt="RPHM 2026 Activity">
+  <!-- ABOUT (Layered Depth Wrapping) -->
+  <section class="about">
+    <div class="wrap">
+      <div class="about-wrap">
+        <div class="about-img">
+          <img src="https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU" alt="About Event">
         </div>
-        <div class="rp-body">
+        <div class="about-text">
+          <div class="about-title">Dirancang Untuk Pelari Modern</div>
           <p>
             Rudy Project Half Marathon 2026 hadir sebagai perayaan HUT Rudy Project ke-24
             tahun — sebuah event lari premium yang merangkul semangat performa, gaya hidup,
-            dan budaya olahraga modern di jantung BSD City, Tangerang, Banten.
+            dan budaya olahraga modern.
           </p>
           <p>
             Menggabungkan celebrity runners, komunitas berpengaruh, para atlet nasional,
             dan produksi race kelas dunia menjadi satu destinasi event yang ikonik,
-            sinematik, dan benar-benar unforgettable.
+            sinematik, dan unforgettable.
           </p>
-          <p>
-            Terbuka untuk pelanggan, komunitas, dan masyarakat umum dengan tiga kategori
-            jarak — 21 KM Half Marathon, 10 KM, dan 5 KM — yang melewati jalan beraspal
-            premium kawasan BSD City.
-          </p>
-          <div class="rp-highlight">
-            Dipersembahkan oleh Rudy Project Indonesia melalui PT. Arras Protama Sejahtera,
-            dengan infrastruktur timing profesional bertenaga IZT Race Technology.
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ CATEGORIES ══════════════════════════════ -->
-  <section class="rp-section rp-section-dark">
-    <div class="rp-wrap">
-      <div class="rp-heading-label">Race Categories</div>
-      <div class="rp-heading">Pilih <span>Jarakmu</span></div>
-      <div class="rp-divider"></div>
-
-      <div class="rp-cat-grid">
-        <div class="rp-cat">
-          <div class="rp-cat-km">21</div>
-          <div class="rp-cat-unit">Kilometer · Half Marathon</div>
+  <!-- CATEGORIES (Big Scattered Text) -->
+  <section class="cat-sec">
+    <div class="wrap">
+      <div class="cat-flex">
+        <div class="cat-item">
+          <div class="cat-num">21</div>
+          <div class="cat-label">Kilometer · Half Marathon</div>
         </div>
-        <div class="rp-cat">
-          <div class="rp-cat-km">10</div>
-          <div class="rp-cat-unit">Kilometer · Competitive Run</div>
+        <div class="cat-item">
+          <div class="cat-num">10</div>
+          <div class="cat-label">Kilometer · Competitive</div>
         </div>
-        <div class="rp-cat">
-          <div class="rp-cat-km">5</div>
-          <div class="rp-cat-unit">Kilometer · Fun Run</div>
+        <div class="cat-item">
+          <div class="cat-num">05</div>
+          <div class="cat-label">Kilometer · Fun Run</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ RUNDOWN ══════════════════════════════ -->
-  <section class="rp-section">
-    <div class="rp-wrap">
-      <div class="rp-heading-label">Schedule</div>
-      <div class="rp-heading">Rundown <span>Event</span></div>
-      <div class="rp-divider"></div>
-
-      <div class="rp-rundown-grid">
-        <div class="rp-rundown-day">
-          <div class="rp-rundown-date">📅 Race Pack Collection — October 2026</div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">08.00 – 17.00</div>
-            <div class="rp-rundown-act">Pengambilan Race Pack</div>
-          </div>
+  <!-- SHOWCASE PRODUCT (3D Hover Overlapping) -->
+  <section class="showcase">
+    <div class="wrap">
+      <div class="sc-title">Performa Dimulai Dari Sini</div>
+      <div class="sc-grid">
+        <div class="sc-card sc-card-1">
+          <img src="https://lh3.googleusercontent.com/d/1zZYZohnoTXpKmny2F5NOPKFMlQIZXklt" alt="Product 1">
         </div>
-
-        <div class="rp-rundown-day">
-          <div class="rp-rundown-date">🏁 Race Day — October 2026</div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">04.30 – 05.00</div>
-            <div class="rp-rundown-act">Pemanasan &amp; Doa Pembuka</div>
-          </div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">05.00</div>
-            <div class="rp-rundown-act">Flag Off 21 KM (COT 4 jam)</div>
-          </div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">06.00 – 06.30</div>
-            <div class="rp-rundown-act">Bazar UMKM &amp; Sponsor · Pemanasan 10 KM &amp; 5 KM</div>
-          </div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">06.30</div>
-            <div class="rp-rundown-act">Flag Off 10 KM (COT 2 jam)</div>
-          </div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">06.45 – 07.00</div>
-            <div class="rp-rundown-act">Persiapan &amp; Flag Off 5 KM (COT 1 jam)</div>
-          </div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">09.00 – 10.30</div>
-            <div class="rp-rundown-act">Upacara Pemenang 5 KM · 10 KM · 21 KM</div>
-          </div>
-          <div class="rp-rundown-item">
-            <div class="rp-rundown-time">10.30 – 12.00</div>
-            <div class="rp-rundown-act">Hiburan &amp; Penutupan</div>
-          </div>
+        <div class="sc-card sc-card-2">
+          <img src="https://lh3.googleusercontent.com/d/1157xlZqJcsyU0g6eOKwWDtS8Q4z5ql-4" alt="Product 2">
+        </div>
+        <div class="sc-card sc-card-3">
+          <img src="https://lh3.googleusercontent.com/d/1amDuh_Rj3VMO7IrdgDyallFwV0esDepX" alt="Product 3">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ PHOTO CONTEST ══════════════════════════════ -->
-  <section class="rp-section rp-section-dark">
-    <div class="rp-wrap">
-      <div class="rp-contest">
-        <div class="rp-contest-bg"></div>
-        <div class="rp-contest-content">
-          <div class="rp-heading-label">Photo Contest</div>
-          <div class="rp-contest-title">
-            ARE YOU READY TO<br>BE THE NEXT<br>
-            <span>RPHM FLYER MODEL?</span>
-          </div>
-          <div class="rp-contest-sub">
-            Foto terbaik akan dijadikan model untuk Flyer Event Rudy Project Half Marathon 2026.
-            Tunjukkan gaya larimu, kenakan Rudy Project, dan jadilah inspirasi jutaan pelari!
-          </div>
+  <!-- RUNDOWN (Vertical Timeline) -->
+  <section class="rundown">
+    <div class="wrap">
+      <div class="rd-head">Rundown Event</div>
+      <div class="timeline">
+        <div class="tl-node">
+          <div class="tl-time">08.00 – 17.00</div>
+          <div class="tl-title">Pengambilan Race Pack</div>
+          <div class="tl-desc">Race Pack Collection - H-2 hingga H-1 sebelum lomba.</div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-time">04.30 – 05.00</div>
+          <div class="tl-title">Pemanasan &amp; Doa Pembuka</div>
+          <div class="tl-desc">Race Day di BSD City. Persiapan mental dan fisik sebelum flag off.</div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-time">05.00</div>
+          <div class="tl-title">Flag Off 21 KM</div>
+          <div class="tl-desc">Pelepasan pelari Half Marathon dengan Cut Off Time (COT) 4 jam.</div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-time">06.30</div>
+          <div class="tl-title">Flag Off 10 KM</div>
+          <div class="tl-desc">Pelepasan pelari kompetitif 10K dengan COT 2 jam.</div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-time">07.00</div>
+          <div class="tl-title">Flag Off 5 KM</div>
+          <div class="tl-desc">Pelepasan Fun Run 5K dengan COT 1 jam.</div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-time">09.00 – Selesai</div>
+          <div class="tl-title">Upacara Pemenang &amp; Hiburan</div>
+          <div class="tl-desc">Penyerahan hadiah podium, bazar UMKM sponsor, dan live entertainment.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="rp-contest-grid">
-            <div class="rp-contest-box">
-              <div class="rp-contest-box-title">📸 Syarat &amp; Ketentuan</div>
-              <ul class="rp-contest-items">
+  <!-- PHOTO CONTEST (Dark Theme & Shadcn Accordion) -->
+  <section class="contest">
+    <div class="contest-bg"></div>
+    <div class="contest-overlay"></div>
+    <div class="wrap contest-wrap">
+      <div class="contest-content">
+        <div class="contest-title">
+          Are you ready to<br>be the next<br><span>RPHM Flyer Model?</span>
+        </div>
+        <p style="font-size:1.1rem; color:#aaa; max-width:600px; line-height:1.8;">
+          Foto terbaik akan dijadikan model untuk Flyer Event Rudy Project Half Marathon 2026.
+          Tunjukkan gaya larimu, kenakan Rudy Project, dan jadilah inspirasi jutaan pelari!
+        </p>
+
+        <div class="accordion-wrap">
+          <details>
+            <summary>Syarat &amp; Ketentuan</summary>
+            <div class="det-body">
+              <ul>
                 <li>Foto pelari dengan kualitas jelas dan menarik</li>
                 <li>Wajib menggunakan kacamata Rudy Project / RPJ</li>
                 <li>Format portrait &amp; file resolusi tinggi</li>
-                <li>Komposisi foto estetik dan proporsional</li>
                 <li>Upload di feeds &amp; Story Instagram (akun tidak di-private)</li>
                 <li>Tag &amp; mention @rudyprojectid @arrasadventure</li>
                 <li>Gunakan hashtag #RPHMModel #PerformanceStartsInYourHead</li>
-                <li>Follow Instagram @rudyprojectid @arrasadventure</li>
               </ul>
             </div>
-            <div class="rp-contest-box">
-              <div class="rp-contest-box-title">🏆 Pemenang Mendapatkan</div>
-              <ul class="rp-contest-items">
+          </details>
+          <details>
+            <summary>Pemenang Mendapatkan</summary>
+            <div class="det-body">
+              <ul>
                 <li>Rudy Project Eyewear (Eksklusif)</li>
                 <li>Smartwatch Premium</li>
                 <li>Voucher Belanja Rudy Project senilai Rp 1.000.000</li>
@@ -936,148 +592,97 @@
                 <li>Featured sebagai Model Flyer Resmi Event</li>
               </ul>
             </div>
-          </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="rp-contest-deadline">
-            <div class="rp-deadline-box">
-              <div>
-                <div class="rp-deadline-label">Last Entry Date</div>
-                <div class="rp-deadline-date">15 Juni 2026</div>
-              </div>
-            </div>
-            <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="rp-btn">
-              Submit Here →
-            </a>
+  <!-- PREMIUM FEATURES (Brutalist List) -->
+  <section class="features">
+    <div class="wrap">
+      <div class="feat-head">Lebih Dari Sekadar Sebuah Race</div>
+      <div class="feat-list">
+        <div class="feat-item">
+          <div class="feat-num">01</div>
+          <div class="feat-text">
+            <h4>Celebrity Running Culture</h4>
+            <p>Berlari bersama selebriti, influencer, atlet nasional, dan komunitas performa dalam satu atmosfer race premium yang belum pernah ada sebelumnya.</p>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">02</div>
+          <div class="feat-text">
+            <h4>International Race Standard</h4>
+            <p>Dibangun dengan timing profesional dari IZT Race Technology, alur race elite, infrastruktur premium, dan pengalaman runner berkelas dunia di BSD City.</p>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">03</div>
+          <div class="feat-text">
+            <h4>Rudy Project Lifestyle</h4>
+            <p>Brand olahraga performa mewah asal Italia yang memadukan budaya lari, gaya, fashion, dan teknologi lensa mutakhir dalam satu event.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ PRODUCT SHOWCASE ══════════════════════════════ -->
-  <section class="rp-section">
-    <div class="rp-wrap">
-      <div class="rp-heading-label">Rudy Project UTMB Collection</div>
-      <div class="rp-heading">Performa Dimulai <span>Dari Sini</span></div>
-      <div class="rp-divider"></div>
-
-      <div class="rp-product-grid">
-        <div class="rp-product-card">
-          <img src="https://lh3.googleusercontent.com/d/1zZYZohnoTXpKmny2F5NOPKFMlQIZXklt" alt="Rudy Project UTMB 1">
-          <div class="rp-product-overlay">
-            <div class="rp-product-name">UTMB Series</div>
-            <div class="rp-product-sub">Trail Performance Eyewear</div>
-          </div>
-        </div>
-        <div class="rp-product-card">
-          <img src="https://lh3.googleusercontent.com/d/1157xlZqJcsyU0g6eOKwWDtS8Q4z5ql-4" alt="Rudy Project UTMB 2">
-          <div class="rp-product-overlay">
-            <div class="rp-product-name">Astral X Desert Matte</div>
-            <div class="rp-product-sub">Advanced Photochromic Technology</div>
-          </div>
-        </div>
-        <div class="rp-product-card">
-          <img src="https://lh3.googleusercontent.com/d/1amDuh_Rj3VMO7IrdgDyallFwV0esDepX" alt="Rudy Project UTMB 3">
-          <div class="rp-product-overlay">
-            <div class="rp-product-name">Designed in Italy</div>
-            <div class="rp-product-sub">Premium Aerospace Materials</div>
-          </div>
-        </div>
-      </div>
+  <!-- BANNER (Registration CTA) -->
+  <section class="banner">
+    <div class="banner-bg"></div>
+    <div class="wrap banner-content">
+      <h2 style="font-size: 3rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px;">Rudy Project Indonesia<br>By Arras Project</h2>
+      <a href="https://lumpat.online" target="_blank" class="btn">Registration Opening Soon</a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ PREMIUM FEATURES ══════════════════════════════ -->
-  <section class="rp-section rp-section-dark">
-    <div class="rp-wrap">
-      <div class="rp-heading-label">Premium Experience</div>
-      <div class="rp-heading">Lebih Dari Sekadar <span>Sebuah Race</span></div>
-      <div class="rp-divider"></div>
-
-      <div class="rp-feature-grid">
-        <div class="rp-feature">
-          <div class="rp-feature-title">Celebrity Running Culture</div>
-          <div class="rp-feature-desc">
-            Berlari bersama selebriti, influencer, atlet nasional, dan komunitas performa
-            dalam satu atmosfer race premium yang belum pernah ada sebelumnya.
-          </div>
+  <!-- APPLE FOOTER -->
+  <footer class="apple-footer">
+    <div class="af-wrap">
+      <div class="af-note">
+        Event ini diselenggarakan oleh PT. Arras Protama Sejahtera dengan lisensi resmi dari Rudy Project Indonesia. Menggunakan teknologi pencatatan waktu mutakhir dari IZT Race Technology. Semua gambar dan model tunduk pada syarat dan ketentuan yang berlaku.
+      </div>
+      <div class="af-dir">
+        <div class="af-col">
+          <h3>Informasi Event</h3>
+          <ul>
+            <li><a href="#">Tentang RPHM 2026</a></li>
+            <li><a href="#">Kategori &amp; Biaya</a></li>
+            <li><a href="#">Rute Race</a></li>
+            <li><a href="#">Pengambilan Race Pack</a></li>
+          </ul>
         </div>
-        <div class="rp-feature">
-          <div class="rp-feature-title">International Race Standard</div>
-          <div class="rp-feature-desc">
-            Dibangun dengan timing profesional dari IZT Race Technology, alur race elite,
-            infrastruktur premium, dan pengalaman runner berkelas dunia di BSD City.
-          </div>
+        <div class="af-col">
+          <h3>Hubungi Kami</h3>
+          <ul>
+            <li><a href="mailto:arrasadventures@gmail.com">Email Arras Adventure</a></li>
+            <li><a href="mailto:socialmediarpid@gmail.com">Email Rudy Project</a></li>
+            <li><a href="#">Whatsapp Support</a></li>
+          </ul>
         </div>
-        <div class="rp-feature">
-          <div class="rp-feature-title">Rudy Project Lifestyle</div>
-          <div class="rp-feature-desc">
-            Brand olahraga performa mewah asal Italia yang memadukan budaya lari,
-            gaya, fashion, dan teknologi lensa ImpactX® mutakhir dalam satu event.
-          </div>
+        <div class="af-col">
+          <h3>Media Sosial</h3>
+          <ul>
+            <li><a href="https://instagram.com/rudyprojectid" target="_blank">Instagram @rudyprojectid</a></li>
+            <li><a href="https://instagram.com/arrasadventure" target="_blank">Instagram @arrasadventure</a></li>
+          </ul>
         </div>
-        <div class="rp-feature">
-          <div class="rp-feature-title">Entertainment Atmosphere</div>
-          <div class="rp-feature-desc">
-            Musik, aktivasi sosial, kehadiran media, bazar UMKM, engagement komunitas,
-            dan momen race day yang penuh energi dari pagi hingga penutupan.
-          </div>
-        </div>
-        <div class="rp-feature">
-          <div class="rp-feature-title">Podium Prize &amp; Awards</div>
-          <div class="rp-feature-desc">
-            Penghargaan bergengsi untuk pemenang setiap kategori dengan upacara
-            podium resmi dan hadiah menarik dari Rudy Project Indonesia.
-          </div>
-        </div>
-        <div class="rp-feature">
-          <div class="rp-feature-title">Sport Tourism Impact</div>
-          <div class="rp-feature-desc">
-            Berkontribusi pada pertumbuhan sport tourism Indonesia, mendukung pariwisata
-            lokal, dan membangun jaringan komunitas lari nasional yang kuat.
-          </div>
+        <div class="af-col">
+          <h3>Sponsor &amp; Partnership</h3>
+          <ul>
+            <li><a href="#">Panduan Sponsor</a></li>
+            <li><a href="#">Menjadi Relawan</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════ OFFICIAL COLLAB BANNER ══════════════════════════════ -->
-  <section class="rp-section">
-    <div class="rp-wrap">
-      <div class="rp-banner">
-        <div class="rp-banner-bg"></div>
-        <div class="rp-banner-content">
-          <div class="rp-heading-label">Official Collaboration</div>
-          <div class="rp-banner-title">
-            RUDY PROJECT INDONESIA<br>
-            <span>BY ARRAS PROJECT</span>
-          </div>
-          <div class="rp-banner-text">
-            Half marathon premium yang menggabungkan performa olahraga, celebrity culture,
-            aktivasi komunitas, dan atmosfer race mewah — dengan teknologi timing
-            bertenaga IZT Race Technology. Diselenggarakan Agustus 2026 di BSD City, Tangerang, Banten.
-          </div>
-          <div style="margin-top:48px;">
-            <span class="rp-btn">Registration Opening Soon</span>
-          </div>
+      <div class="af-bottom">
+        <div>Copyright © 2026 Rudy Project Indonesia. All rights reserved.</div>
+        <div style="display:flex; gap:15px;">
+          <a href="#" style="color:#515154; text-decoration:none;">Kebijakan Privasi</a> | 
+          <a href="#" style="color:#515154; text-decoration:none;">Syarat &amp; Ketentuan</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
-  <footer class="rp-footer">
-    <div class="rp-wrap">
-      <div class="rp-footer-logo">RUDY PROJECT HALF MARATHON 2026</div>
-      <div class="rp-footer-copy">
-        Rudy Project Indonesia · PT. Arras Protama Sejahtera · IZT Race Technology<br>
-        Icon Business Park 5 Blok F No. 6, Sampora, Cisauk, Tangerang, Banten 15345<br>
-        +62 811-880-944 · arrasadventures@gmail.com
-      </div>
-      <div class="rp-footer-links">
-        <a href="https://instagram.com/rudyprojectid" class="rp-footer-link">@rudyprojectid</a>
-        <a href="https://instagram.com/arrasadventure" class="rp-footer-link">@arrasadventure</a>
-        <a href="mailto:socialmediarpid@gmail.com" class="rp-footer-link">socialmediarpid@gmail.com</a>
       </div>
     </div>
   </footer>
