@@ -78,15 +78,20 @@
     .rp-hero-bg {
       position: absolute;
       inset: 0;
-      background: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9') center/cover no-repeat;
-      filter: grayscale(100%) opacity(0.35); /* Monochrome aesthetic */
+      background-image: url('https://lh3.googleusercontent.com/d/1ll8D8tpDR0bVPiL7bP3SIrFLvTPWFgl9');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Parallax effect */
+      filter: grayscale(100%) opacity(0.6); 
       z-index: 0;
     }
 
     .rp-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 100%);
+      /* Gradient that is lighter at the top to show the image, and fades to white at the bottom */
+      background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,1) 100%);
       z-index: 1;
     }
 
@@ -498,8 +503,12 @@
     .rp-contest-bg, .rp-banner-bg {
       position: absolute;
       inset: 0;
-      background: url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU') center/cover no-repeat;
-      filter: grayscale(100%) opacity(0.15);
+      background-image: url('https://lh3.googleusercontent.com/d/1J93CmoLdKRTD4vnXVxMn2fqXbFSOpZHU');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Parallax effect */
+      filter: grayscale(100%) opacity(0.4);
       z-index: 0;
     }
     
