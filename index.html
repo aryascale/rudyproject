@@ -349,7 +349,17 @@
       .sc-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
     }
     @media(max-width: 768px) {
-      .hero-title { font-size: 3.5rem; }
+      .hero-title {
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
+        word-wrap: break-word;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
       .feat-item { flex-direction: column; gap: 16px; }
       .feat-num { font-size: 2rem; min-width: auto; }
       .contest-title { font-size: 3rem; }
@@ -380,7 +390,7 @@
           Pengalaman lari premium generasi baru. Memadukan performa tinggi, budaya celebrity runner, dan teknologi balap mutakhir dalam harmoni sempurna.
         </div>
         <div class="hero-actions">
-          <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="btn-primary">Registration Now</a>
+          <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="btn-primary">Register Now</a>
           <div class="hero-date">OCTOBER 2026</div>
         </div>
       </div>
@@ -596,7 +606,7 @@
     <div class="banner-bg"></div>
     <div class="wrap banner-content">
       <h2 style="font-size: 2.5rem; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 20px;">Rudy Project Indonesia<br>By Arras Project</h2>
-      <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="btn">Registration Now</a>
+      <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="btn">Register Now</a>
     </div>
   </section>
 
