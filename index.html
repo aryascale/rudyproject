@@ -32,101 +32,244 @@
 
     .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 28px; }
     
-    /* ── 1. HERO (DYNAMIC, FAST, APPLE EVENT STYLE) ── */
+    /* ── 1. HERO (DYNAMIC, FAST, SPORTY TECH STYLE) ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-slide-right {
+      opacity: 0;
+      animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
     .hero {
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       background: #000;
       color: #fff;
       overflow: hidden;
+      padding: 120px 0 60px;
     }
     .hero-bg {
       position: absolute; inset: 0;
       background: url('assets/hero.jpeg') center/cover no-repeat;
-      opacity: 0.6;
+      opacity: 0.4;
       z-index: 0;
       width: 100%; height: 100%;
+      filter: grayscale(100%) contrast(1.2);
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0.8) 40%, rgba(184,0,230,0.15) 100%);
       z-index: 1;
     }
     .hero-content {
       position: relative; z-index: 2;
       width: 100%;
-      max-width: 700px;
+      max-width: 1000px;
     }
     .hero-eyebrow {
       font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.15em;
+      font-weight: 800;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 20px;
+      color: #b800e6;
+      margin-bottom: 10px;
       font-size: 1rem;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 40px; height: 2px;
-      background: #fff;
+      width: 60px; height: 2px;
+      background: #b800e6;
     }
     .hero-title {
       font-family: 'Barlow', sans-serif;
-      font-size: clamp(4rem, 9vw, 8rem);
+      font-size: clamp(3rem, 8vw, 6.5rem);
       font-weight: 900;
       font-style: italic;
       line-height: 0.85;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      margin-bottom: 24px;
+      margin-bottom: 10px;
       color: #fff;
-      text-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
     .hero-title span {
       color: transparent;
       -webkit-text-stroke: 1.5px #fff;
       display: block;
     }
+    .hero-subtitle {
+      font-family: 'Barlow', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #b800e6;
+      margin-bottom: 30px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
     .hero-desc {
-      font-size: 1.2rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #ddd;
-      margin-bottom: 40px;
-      max-width: 550px;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    .btn-primary {
-      background: #fff;
-      color: #000;
-      padding: 18px 40px;
-      border-radius: 100px;
       font-family: 'Inter', sans-serif;
-      font-weight: 700;
       font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #999;
+      margin-bottom: 50px;
+      max-width: 600px;
+    }
+    
+    /* TECH BORDERS / SPORTY VIBE */
+    .hero-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-bottom: 40px;
+      border: 1px solid #222;
+      background: rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 24px;
+      border-right: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+    .info-item:last-child {
+      border-right: none;
+    }
+    .info-item strong {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: #b800e6;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    .info-item span {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    
+    .btn-primary {
+      background: #b800e6;
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 24px;
     }
     .btn-primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+      background: #fff;
+      color: #000;
     }
-    .hero-date {
-      font-family: 'Barlow', sans-serif;
+    
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #222;
+      border: 1px solid #222;
+    }
+    .feat-box {
+      background: #000;
+      padding: 30px 24px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .feat-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 2px;
+      background: #b800e6;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .feat-box:hover {
+      background: #080808;
+    }
+    .feat-box:hover::before {
+      transform: scaleX(1);
+    }
+    .feat-box .feat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
       font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: 0.05em;
+      color: #555;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .feat-box h4 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .feat-box p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .feat-box:hover {
+      border-color: rgba(184, 0, 230, 0.8);
+      transform: translateY(-5px);
+      background: rgba(184, 0, 230, 0.1);
+    }
+    .feat-box .feat-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .feat-box h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .feat-box p {
+      font-size: 0.85rem;
+      color: #aaa;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* ── 2. ABOUT LAYERED DEPTH ── */
@@ -347,6 +490,7 @@
       .cat-grid { grid-template-columns: 1fr 1fr; }
       .cat-card { height: 300px; }
       .sc-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .hero-features { grid-template-columns: repeat(2, 1fr); }
     }
     @media(max-width: 768px) {
       .hero-title {
@@ -359,6 +503,8 @@
         align-items: flex-start;
         gap: 16px;
       }
+      .hero-features { grid-template-columns: 1fr; }
+      .hero-info-grid { grid-template-columns: 1fr; }
 
       .feat-item { flex-direction: column; gap: 16px; }
       .feat-num { font-size: 2rem; min-width: auto; }
@@ -381,17 +527,57 @@
     <div class="hero-overlay"></div>
     <div class="wrap">
       <div class="hero-content">
-        <div class="hero-eyebrow">Rudy Project 2026</div>
-        <div class="hero-title">
-          Half Marathon
-          <span>BSD City</span>
+        <div class="hero-eyebrow animate-slide-right">ROAD TO</div>
+        <h1 class="hero-title animate-fade-up delay-1">
+          RUDY PROJECT<br>
+          <span>HALF MARATHON</span>
+        </h1>
+        <div class="hero-subtitle animate-fade-up delay-2">
+          INDONESIA 24TH ANNIVERSARY
         </div>
-        <div class="hero-desc">
-          Pengalaman lari premium generasi baru. Memadukan performa tinggi, budaya celebrity runner, dan teknologi balap mutakhir dalam harmoni sempurna.
+        <p class="hero-desc animate-fade-up delay-3">
+          Setiap event besar selalu dimulai dengan orang orang yang berani mengambil langkah pertama. Menjelang Rudy Project Half Marathon 2026, mari bergabung dalam event spesial untuk merayakan performa, kecepatan, dan ulang tahun yang ke-24.
+        </p>
+        
+        <div class="hero-info-grid animate-fade-up delay-4">
+          <div class="info-item">
+            <strong>[ DATE ]</strong>
+            <span>SABTU, 4 JULI 2026</span>
+          </div>
+          <div class="info-item">
+            <strong>[ CATEGORY ]</strong>
+            <span>5K FUN RUN</span>
+          </div>
+          <div class="info-item">
+            <strong>[ LOCATION ]</strong>
+            <span>NUR CORNER – JAKSEL</span>
+          </div>
+          <div class="info-item" style="padding: 0;">
+            <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="btn-primary">REGISTER NOW</a>
+          </div>
         </div>
-        <div class="hero-actions">
-          <a href="https://lumpat.online/event/rudy-project-half-marathon" target="_blank" class="btn-primary">Register Now</a>
-          <div class="hero-date">OCTOBER 2026</div>
+
+        <div class="hero-features animate-fade-up delay-5">
+          <div class="feat-box">
+            <div class="feat-label">01 / PUBLIC</div>
+            <h4>TERBUKA UNTUK UMUM</h4>
+            <p>Semua bisa ikut, semua bisa jadi bagian sejarah!</p>
+          </div>
+          <div class="feat-box">
+            <div class="feat-label">02 / PREPARATION</div>
+            <h4>MENUJU 5K, 10K & 21K</h4>
+            <p>Latihan terstruktur untuk capai performa terbaikmu!</p>
+          </div>
+          <div class="feat-box">
+            <div class="feat-label">03 / GATHERING</div>
+            <h4>FUN RUN & COMMUNITY</h4>
+            <p>Berlari, bersosialisasi, dan bersenang-senang!</p>
+          </div>
+          <div class="feat-box">
+            <div class="feat-label">04 / CELEBRATION</div>
+            <h4>24TH ANNIVERSARY</h4>
+            <p>Rayakan hari spesial bersama Rudy Project!</p>
+          </div>
         </div>
       </div>
     </div>
