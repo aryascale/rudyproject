@@ -237,6 +237,10 @@
     
     .btn-purple { background: #c000ff; color: white; padding: 16px 32px; border-radius: 30px; font-weight: 800; text-decoration: none; display: inline-block; text-align: center; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
     .btn-purple:hover { background: #9000d0; }
+    
+    /* New Hero Cards */
+    .hero-card-kategori { flex: 1; display: flex; flex-direction: column; background: #0a0a0a; padding: 40px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.05); }
+    .hero-card-countdown { flex: 1; display: flex; flex-direction: column; background: #0a0a0a; border-radius: 28px; padding: 40px; justify-content: center; }
 
     /* Footer */
     .mega-footer {
@@ -297,6 +301,9 @@
       .hero-img-overlay { padding: 24px; justify-content: flex-end; }
       .hero-img-overlay p { font-size: 0.85rem; line-height: 1.5; }
       .hero-strip { flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 24px; padding-top: 16px; }
+      .hero-card-kategori, .hero-card-countdown { padding: 24px !important; }
+      .countdown { gap: 12px !important; }
+      .cd-num { font-size: 1.5rem !important; }
     }
 
     /* Splash Screen */
@@ -373,7 +380,7 @@
       </div>
       
       <div class="hero-side">
-        <div class="bento-card" style="flex: 1; display: flex; flex-direction: column; background: #0a0a0a; padding: 40px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.05);">
+        <div class="bento-card hero-card-kategori">
           <div style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ccc; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 0.7rem; width: fit-content; margin-bottom: 24px;">KATEGORI LOMBA</div>
           <div class="cat-list">
             <div class="cat-item">
@@ -415,7 +422,7 @@
           </div>
         </div>
         
-        <div class="bento-card" style="flex: 1; display: flex; flex-direction: column; background: #0a0a0a; border-radius: 28px; padding: 40px; justify-content: center;">
+        <div class="bento-card hero-card-countdown">
           <div style="background: rgba(255,165,0,0.05); color: #ffb800; border: 1px solid rgba(255,165,0,0.4); padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 0.7rem; width: fit-content; margin: 0 auto 30px auto;">🏆 EARLY BIRD BERAKHIR SEGERA</div>
           <div style="font-size: 0.8rem; font-weight: 700; color: #888; text-align: center; letter-spacing: 1.5px; margin-bottom: 20px;">BERAKHIR DALAM</div>
           <div class="countdown" style="justify-content: center; gap: 24px;">
