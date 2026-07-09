@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rudy Project Half Marathon 2026</title>
+  
+  <meta name="description" content="Rudy Project Half Marathon 2026 - Pengalaman lari premium di BSD City, Tangerang. Pilih kategori 21K, 10K, atau 5K dan daftarkan diri Anda sekarang!">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rudyprojectrun.com/">
+  <meta property="og:title" content="Rudy Project Half Marathon 2026">
+  <meta property="og:description" content="Pengalaman lari premium di BSD City, Tangerang. Hubungkan performa, gaya hidup, dan komunitas dalam satu race.">
+  <meta property="og:image" content="https://rudyprojectrun.com/assets/21.jpeg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://rudyprojectrun.com/">
+  <meta property="twitter:title" content="Rudy Project Half Marathon 2026">
+  <meta property="twitter:description" content="Pengalaman lari premium di BSD City, Tangerang. Hubungkan performa, gaya hidup, dan komunitas dalam satu race.">
+  <meta property="twitter:image" content="https://rudyprojectrun.com/assets/21.jpeg">
+
   <link rel="icon" href="https://www.rudyproject.com/cdn/shop/files/logo-mobile.svg?v=1752058228&width=47" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +28,7 @@
   
   <style>
     :root {
-      /* Dark/Purple Palette from existing site */
+      /* Dark/Primary Palette from existing site */
       --bg: #030005;
       --bg-card: #0a0510;
       --bg-card-alt: #160a22;
@@ -49,46 +66,66 @@
     /* Layout Skeleton */
     .layout {
       display: grid;
-      grid-template-columns: 80px 1fr;
+      grid-template-columns: 1fr;
       min-height: 100vh;
     }
 
-    /* Sidebar Navigation */
-    .sidebar {
-      border-right: 1px solid var(--border);
+    /* Site Header Navigation */
+    .site-header {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      padding: 40px 0;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      background: var(--bg);
-      z-index: 100;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      width: 100%;
+      margin-bottom: 20px;
     }
-    .sb-logo img { width: 40px; margin-bottom: 40px; }
-    .sb-nav {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+    .header-logo img {
+      height: 32px;
+      width: auto;
+    }
+    .header-links {
       display: flex;
-      gap: 40px;
       align-items: center;
+      gap: 32px;
+    }
+    .header-links a {
       font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       color: var(--text-sub);
-      margin-top: auto;
     }
-    .sb-nav a.highlight { color: var(--accent); }
-    .sb-nav a.active { color: var(--text); }
+    .header-links a:hover {
+      color: var(--text);
+    }
+    .header-links a.btn-cta {
+      background: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+    
+    @media (max-width: 600px) {
+      .header-links a:not(.btn-cta) {
+        display: none;
+      }
+      .header-links {
+        gap: 16px;
+      }
+    }
 
     /* Main Content Area */
     .main-content {
-      padding: 32px;
+      padding: 40px 32px 80px 32px;
       display: flex;
       flex-direction: column;
       gap: 80px; /* Golden ratio spacing */
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     
@@ -188,9 +225,10 @@
     /* ── BENTO GRID SECTION ── */
     .section-title-wrapper {
       display: flex; gap: 24px; align-items: baseline; margin-bottom: 32px;
+      flex-wrap: wrap;
     }
-    .section-title { font-size: clamp(2.5rem, 5vw, 4rem); max-width: 600px; }
-    .section-pills { display: flex; gap: 12px; }
+    .section-title { font-size: clamp(2.5rem, 5vw, 4rem); max-width: 600px; word-break: break-word; }
+    .section-pills { display: flex; gap: 12px; flex-wrap: wrap; }
     .pill { padding: 8px 16px; border-radius: 30px; border: 1px solid var(--border); font-size: 0.9rem; }
 
     .bento-grid-3 {
@@ -203,7 +241,7 @@
     .span-2-row { grid-row: span 2; }
 
     /* Specific Cards */
-    .stat-number { font-size: 5rem; line-height: 1; margin-top: auto; }
+    .stat-number { font-size: clamp(3rem, 8vw, 5rem); line-height: 1; margin-top: auto; }
     .stat-label { color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; }
     
     /* Hover Effects */
@@ -212,9 +250,14 @@
     
     /* Hero Image 2 Specifics */
     .hero-img-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%);
-      display: flex; flex-direction: column; justify-content: flex-end; padding: 40px;
+      position: relative;
+      z-index: 2;
+      min-height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
     }
     .hero-strip {
       display: flex; justify-content: space-between; align-items: center;
@@ -223,6 +266,13 @@
     }
     .hero-strip-item { display: flex; flex-direction: column; gap: 4px; }
     .hero-strip-item span { color: white; font-weight: 700; font-size: 1rem; }
+    .bento-row-card {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 40px;
+      overflow: hidden;
+    }
     
     .cat-list { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
     .cat-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -235,8 +285,8 @@
     .cd-num { font-size: 2rem; font-weight: 800; font-family: 'Barlow'; }
     .cd-label { font-size: 0.7rem; color: #888; letter-spacing: 1px; }
     
-    .btn-purple { background: #c000ff; color: white; padding: 16px 32px; border-radius: 30px; font-weight: 800; text-decoration: none; display: inline-block; text-align: center; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-    .btn-purple:hover { background: #9000d0; }
+    .btn-primary { background: #c000ff; color: white; padding: 16px 32px; border-radius: 30px; font-weight: 800; text-decoration: none; display: inline-block; text-align: center; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .btn-primary:hover { background: #9000d0; }
     
     /* New Hero Cards */
     .hero-card-kategori { flex: 1; display: flex; flex-direction: column; background: #0a0a0a; padding: 40px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.05); }
@@ -257,29 +307,23 @@
     .link-group { display: flex; flex-direction: column; gap: 12px; }
     .link-group h4 { color: var(--text-sub); font-size: 0.9rem; margin-bottom: 8px; }
     .mega-text {
-      font-size: clamp(5rem, 15vw, 22rem);
+      font-size: clamp(3rem, 12vw, 22rem);
       line-height: 1;
       letter-spacing: -5px;
       color: var(--text);
       text-align: center;
       margin: 0 -20px;
-      white-space: nowrap;
+      overflow: hidden;
     }
     
     .footer-bottom {
-      display: flex; justify-content: space-between; margin-top: 40px; color: var(--text-sub); font-size: 0.9rem;
+      display: flex; justify-content: space-between; margin-top: 40px; color: var(--text-sub); font-size: 0.85rem;
+      flex-wrap: wrap; gap: 12px;
     }
 
-    /* Responsive */
+    /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .layout { grid-template-columns: 1fr; }
-      .sidebar {
-        height: auto; width: 100%; flex-direction: row; padding: 20px;
-        position: relative; border-right: none; border-bottom: 1px solid var(--border);
-        justify-content: space-between;
-      }
-      .sb-logo img { margin-bottom: 0; }
-      .sb-nav { writing-mode: horizontal-tb; transform: none; margin-top: 0; gap: 20px; }
       .hero-section { grid-template-columns: 1fr; height: auto; }
       .hero-giant-text { 
         position: absolute; 
@@ -290,25 +334,113 @@
         white-space: normal; 
         text-align: right;
       }
-      .hero-main { min-height: 550px; overflow: hidden; }
-      .bento-card { padding: 20px; }
+      .hero-main { min-height: 500px; overflow: hidden; }
+      .bento-card { padding: 24px; overflow: hidden; }
       .bento-grid-3 { grid-template-columns: 1fr; grid-auto-rows: auto; }
       .span-2-col { grid-column: span 1; }
       .span-2-row { grid-row: span 1; }
       .footer-top { flex-direction: column; align-items: flex-start; gap: 40px; }
       
-      /* New Hero Mobile Adjustments */
-      .hero-img-overlay { padding: 24px; justify-content: flex-end; }
+      /* Hero Adjustments */
+      .hero-img-overlay { padding: 32px 24px; min-height: 500px; justify-content: flex-end; }
       .hero-img-overlay p { font-size: 0.85rem; line-height: 1.5; }
       .hero-strip { flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 24px; padding-top: 16px; }
       .hero-card-kategori, .hero-card-countdown { padding: 24px !important; }
-      .countdown { gap: 12px !important; }
-      .cd-num { font-size: 1.5rem !important; }
       
-      /* Image & Layout Fixes */
+      /* Layout Overflow Fix */
       .main-content { max-width: 100vw; overflow-x: hidden; }
-      .mega-text { white-space: normal; font-size: clamp(4rem, 15vw, 8rem); word-break: break-word; }
-      .bento-grid-3 img { height: auto !important; aspect-ratio: 1/1; object-fit: cover; }
+      .mega-text { font-size: clamp(2.5rem, 12vw, 8rem); word-break: break-word; }
+      .bento-grid-3 img { height: auto !important; max-height: 300px; object-fit: cover; }
+      .card-title-lg { font-size: clamp(1.5rem, 4vw, 2.5rem); word-break: break-word; }
+      .section-title { font-size: clamp(1.8rem, 5vw, 3rem); }
+    }
+
+    @media (max-width: 768px) {
+      .main-content { padding: 16px; gap: 48px; }
+      .bento-row-card {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+      }
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      .mega-footer { padding: 48px 20px; }
+      .mega-text { letter-spacing: -2px; margin: 0; }
+      .section-title-wrapper { gap: 12px; }
+      .section-pills { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .main-content { padding: 12px; gap: 32px; }
+      .bento-card { padding: 20px; border-radius: 16px; }
+      .card-title-lg { font-size: 1.4rem; }
+      .section-title { font-size: 1.5rem; }
+      .mega-text { font-size: clamp(2rem, 10vw, 4rem); }
+      .footer-top h2 { font-size: 1.5rem; }
+      .footer-links { gap: 24px; }
+    }
+
+
+
+    .hero-banner-card {
+      position: relative;
+      min-height: 80vh;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .hero-banner-card {
+        min-height: 60vh;
+        padding: 32px 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-ctas a {
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .category-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 16px;
+      margin-top: 24px;
+    }
+    .rundown-columns-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .category-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 16px;
+        padding-top: 12px;
+      }
+      .rundown-columns-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
     }
 
     /* Splash Screen */
@@ -337,138 +469,118 @@
 </div>
 
 <div class="layout">
-  
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <a href="#" class="sb-logo">
-      <img src="//www.rudyproject.com/cdn/shop/files/logo-mobile.svg?v=1752058228&width=47" alt="Logo">
-    </a>
-    <nav class="sb-nav">
-      <a href="#about">Tentang</a>
-      <a href="#kategori">Kategori</a>
-      <a href="#racepack">Race Pack</a>
-      <a href="https://lumpat.online/event/rudy-project-half-marathon" class="highlight">Daftar Sekarang</a>
-    </nav>
-  </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main-content">
     
     <!-- 1. HERO -->
-    <section class="hero-section">
-      <div class="bento-card p-0 hero-main hover-scale" style="position: relative;">
-        <img src="assets/WhatsApp Image 2026-05-11 at 14.32.10.jpeg" alt="Start Line" style="object-fit: cover;">
-        <div class="hero-img-overlay">
-          <div style="color: #c000ff; font-weight: 800; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 12px;">ROAD TO</div>
-          <h1 style="font-size: clamp(3rem, 6vw, 5rem); font-family: 'Barlow'; font-weight: 900; line-height: 0.9; margin-bottom: 16px; text-transform: uppercase; letter-spacing: -1px;">
-            RUDY PROJECT<br>HALF MARATHON
-          </h1>
-          <div style="font-size: 1.2rem; font-style: italic; margin-bottom: 24px; color: #ddd;">Rudy Project Indonesia 24th Anniversary</div>
-          <p style="max-width: 600px; color: #bbb; line-height: 1.6; font-size: 0.95rem;">
-            Setiap event besar selalu dimulai dengan orang orang yang berani mengambil langkah pertama. Menjelang Rudy Project Half Marathon 2026, mari bergabung dalam event Rudy Project Indonesia 24th Anniversary untuk merayakan ulang tahun Rudy Project Indonesia yang ke 24 tahun.
-          </p>
-          <div class="hero-strip">
-            <div class="hero-strip-item">
-              HARI/TANGGAL
-              <span>Sabtu, 4 Juli 2026</span>
-            </div>
-            <div class="hero-strip-item">
-              KATEGORI
-              <span>5K, 10K, 21K</span>
-            </div>
-            <div class="hero-strip-item">
-              LOKASI
-              <span>Restoran Nur Corner, Jaksel</span>
-            </div>
+    <section class="hero-section" style="display: grid; grid-template-columns: 1fr; gap: 32px; height: auto;">
+      <!-- Main Immersive Visual and Title -->
+      <div class="bento-card hero-banner-card hover-scale">
+        <img src="assets/WhatsApp Image 2026-05-11 at 14.32.10.jpeg" alt="Rudy Project Start" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; z-index: 1;">
+        
+        <!-- Top Row: Badge and Info -->
+        <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; width: 100%;">
+          <div style="border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); text-transform: uppercase;">
+            24th Anniversary Race
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: #888; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">LOKASI</div>
+            <div style="font-size: 1.1rem; font-weight: 800; font-family: 'Barlow'; color: white; margin-top: 4px;">BSD CITY, TANGERANG</div>
+          </div>
+        </div>
+
+        <!-- Center Row: Giant Typography -->
+        <div style="position: relative; z-index: 2; margin: 60px 0; width: 100%;">
+          <div style="font-family: 'Barlow'; font-weight: 900; font-size: clamp(2.5rem, 7vw, 7.5rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -2px; color: white;">
+            RUDY PROJECT<br>
+            <span style="color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.8);">HALF MARATHON</span>
+          </div>
+          <div style="font-size: 1.2rem; font-style: italic; color: #ccc; margin-top: 20px; font-weight: 500;">
+            Performance · Community · Sport Tourism · Lifestyle
+          </div>
+        </div>
+
+        <!-- Bottom Row: CTA -->
+        <div style="position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: flex-end; gap: 40px; flex-wrap: wrap; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px;">
+          <div class="hero-ctas">
+            <a href="#kategori" style="border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; padding: 18px 36px; border-radius: 4px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; font-size: 0.9rem; display: inline-block;">
+              Lihat Kategori
+            </a>
+            <a href="https://lumpat.online/event/rudy-project-half-marathon" style="background: var(--accent); color: white; padding: 18px 36px; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; font-size: 0.9rem; box-shadow: 0 0 20px rgba(255,79,0,0.3); display: inline-block;">
+              Daftar Sekarang →
+            </a>
           </div>
         </div>
       </div>
-      
-      <div class="hero-side">
-        <div class="bento-card hero-card-kategori">
-          <div style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ccc; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 0.7rem; width: fit-content; margin-bottom: 24px;">KATEGORI LOMBA</div>
-          <div class="cat-list">
-            <div class="cat-item">
-              <div class="cat-item-left">
-                <div class="cat-icon" style="background: rgba(255,255,255,0.05); color: white; border-radius: 12px; width: 48px; height: 48px; font-size: 1rem;">21K</div>
-                <div>
-                  <div style="font-weight: 800; font-family: 'Barlow'; font-size: 1.1rem; color: white;">21K HALF MARATHON</div>
-                  <div style="font-size: 0.8rem; color: #888;">Terbuka (18 tahun ke atas)</div>
-                </div>
-              </div>
-            </div>
-            <div class="cat-item">
-              <div class="cat-item-left">
-                <div class="cat-icon" style="background: rgba(255,255,255,0.05); color: white; border-radius: 12px; width: 48px; height: 48px; font-size: 1rem;">10K</div>
-                <div>
-                  <div style="font-weight: 800; font-family: 'Barlow'; font-size: 1.1rem; color: white;">10K TNI/POLRI</div>
-                  <div style="font-size: 0.8rem; color: #888;">Terbuka (18 tahun ke atas)</div>
-                </div>
-              </div>
-            </div>
-            <div class="cat-item">
-              <div class="cat-item-left">
-                <div class="cat-icon" style="background: rgba(255,255,255,0.05); color: white; border-radius: 12px; width: 48px; height: 48px; font-size: 1rem;">10K</div>
-                <div>
-                  <div style="font-weight: 800; font-family: 'Barlow'; font-size: 1.1rem; color: white;">10K OPEN & MASTER</div>
-                  <div style="font-size: 0.8rem; color: #888;">Terbuka (18 tahun ke atas)</div>
-                </div>
-              </div>
-            </div>
-            <div class="cat-item">
-              <div class="cat-item-left">
-                <div class="cat-icon" style="background: rgba(255,255,255,0.05); color: white; border-radius: 12px; width: 48px; height: 48px; font-size: 1rem;">5K</div>
-                <div>
-                  <div style="font-weight: 800; font-family: 'Barlow'; font-size: 1.1rem; color: white;">5K FUN RUN</div>
-                  <div style="font-size: 0.8rem; color: #888;">Terbuka (13 tahun ke atas)</div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+      <!-- Categories HUD Panel (Full Width) -->
+      <div class="bento-card" style="border-radius: 4px; padding: 32px; background: var(--bg-card); border: 1px solid var(--border);">
+        <div style="font-size: 0.75rem; color: #888; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px;">
+          QUICK DETAILS · OKTOBER 2026
         </div>
-        
-        <div class="bento-card hero-card-countdown">
-          <div style="background: rgba(255,165,0,0.05); color: #ffb800; border: 1px solid rgba(255,165,0,0.4); padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 0.7rem; width: fit-content; margin: 0 auto 30px auto;">🏆 EARLY BIRD BERAKHIR SEGERA</div>
-          <div style="font-size: 0.8rem; font-weight: 700; color: #888; text-align: center; letter-spacing: 1.5px; margin-bottom: 20px;">BERAKHIR DALAM</div>
-          <div class="countdown" style="justify-content: center; gap: 24px;">
-            <div class="cd-item"><div class="cd-num" id="cd-days">00</div><div class="cd-label">HARI</div></div>
-            <div class="cd-item"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">JAM</div></div>
-            <div class="cd-item"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">MIN</div></div>
-            <div class="cd-item"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">SAAT</div></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent); font-family: 'Barlow'; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 16px; min-width: 50px;">21K</div>
+            <div>
+              <div style="font-weight: 800; font-size: 0.95rem; color: white;">OPEN & MASTER</div>
+              <div style="font-size: 0.75rem; color: #888; margin-top: 2px;">Usia 18+ · COT 4 Jam</div>
+            </div>
           </div>
-          <div style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 30px;">Jangan lepaskan peluang harga istimewa!</div>
-          <a href="https://lumpat.online/event/rudy-project-half-marathon" style="background: #cc00ff; color: white; width: 100%; border-radius: 999px; padding: 18px 0; font-weight: 800; font-size: 1rem; letter-spacing: 1px; text-align: center; text-decoration: none; display: block;">REGISTER NOW</a>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent); font-family: 'Barlow'; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 16px; min-width: 50px;">10K</div>
+            <div>
+              <div style="font-weight: 800; font-size: 0.95rem; color: white;">TNI / POLRI</div>
+              <div style="font-size: 0.75rem; color: #888; margin-top: 2px;">Khusus Anggota · COT 2 Jam</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent); font-family: 'Barlow'; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 16px; min-width: 50px;">10K</div>
+            <div>
+              <div style="font-weight: 800; font-size: 0.95rem; color: white;">OPEN & MASTER</div>
+              <div style="font-size: 0.75rem; color: #888; margin-top: 2px;">Usia 18+ · COT 2 Jam</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent); font-family: 'Barlow'; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 16px; min-width: 50px;">5K</div>
+            <div>
+              <div style="font-weight: 800; font-size: 0.95rem; color: white;">FUN RUN</div>
+              <div style="font-size: 0.75rem; color: #888; margin-top: 2px;">Usia 13+ · COT 1 Jam</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <script>
-      function updateCountdown() {
-        const targetDate = new Date("2026-10-01T00:00:00").getTime();
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+    <!-- 1.5 ABOUT THE EVENT -->
+    <section id="about">
+      <div class="bento-grid-3">
+        <!-- Big text about the event -->
+        <div class="bento-card span-2-col" style="display: flex; flex-direction: column; justify-content: center; min-height: 350px;">
+          <div class="badge">TENTANG EVENT</div>
+          <h2 class="card-title-lg" style="font-size: clamp(2rem, 4vw, 3rem); font-family: 'Barlow'; margin-bottom: 24px;">DIRANCANG UNTUK PELARI MODERN</h2>
+          <p style="color: var(--text-sub); line-height: 1.8; margin-bottom: 16px; font-size: 1rem;">
+            Rudy Project Half Marathon 2026 hadir sebagai perayaan HUT Rudy Project ke-24 tahun — sebuah event lari premium yang merangkul semangat performa, gaya hidup, dan budaya olahraga modern di jantung BSD City, Tangerang, Banten.
+          </p>
+          <p style="color: var(--text-sub); line-height: 1.8; font-size: 1rem;">
+            Menggabungkan celebrity runners, komunitas berpengaruh, para atlet nasional, dan produksi race kelas dunia menjadi satu destinasi event yang ikonik, sinematik, dan benar-benar unforgettable.
+          </p>
+        </div>
+        
+        <!-- Image Card for about section -->
+        <div class="bento-card p-0 hover-scale" style="position: relative;">
+          <img src="assets/WhatsApp Image 2026-05-11 at 14.06.09.jpeg" alt="RPHM Activity" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+          <div style="position: absolute; bottom: 24px; left: 24px; z-index: 2;">
+            <div style="font-weight: 800; font-family: 'Barlow'; font-size: 1.2rem; text-transform: uppercase;">Performa & Gaya Hidup</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        if (distance < 0) return;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        const eDays = document.getElementById("cd-days");
-        if(eDays) {
-          eDays.innerText = days.toString().padStart(2, '0');
-          document.getElementById("cd-hours").innerText = hours.toString().padStart(2, '0');
-          document.getElementById("cd-mins").innerText = minutes.toString().padStart(2, '0');
-          document.getElementById("cd-secs").innerText = seconds.toString().padStart(2, '0');
-        }
-      }
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-    </script>
 
     <!-- 2. BENTO FEATURES -->
-    <section>
+    <section id="racepack">
       <div class="section-title-wrapper">
         <h2 class="section-title">Race Pack & Merchandise Eksklusif.</h2>
         <div class="section-pills">
@@ -481,7 +593,7 @@
         <!-- Stat Card -->
         <div class="bento-card light">
           <h3 class="card-title">Tanggal Lomba</h3>
-          <div class="stat-number display-font">10<span style="font-size: 2rem; color: #888;">/Agus/26</span></div>
+          <div class="stat-number display-font">OKT<span style="font-size: 2rem; color: #888;">/26</span></div>
           <div class="stat-label">BSD City, Tangerang</div>
         </div>
         
@@ -496,7 +608,7 @@
 
         <!-- Image Card -->
         <div class="bento-card p-0 hover-scale span-2-row">
-          <img src="assets/21.jpeg" alt="RPHM Route" style="width: 100%; height: 100%;">
+          <img src="assets/21.jpeg" alt="RPHM Route" style="width: 100%; height: 100%; min-height: 250px;">
           <div style="position: absolute; bottom: 30px; left: 30px; z-index: 2;">
             <h3 style="font-size: 2rem; font-family: 'Barlow'; text-transform: uppercase;">Rute Lari<br>Eksklusif</h3>
             <p style="font-size: 0.8rem; color: #ccc; margin-top: 8px;">BSD CITY, TANGERANG - Rute Datar & Steril</p>
@@ -504,7 +616,7 @@
         </div>
 
         <!-- Orange Accent Card -->
-        <div class="bento-card accent span-2-col" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+        <div class="bento-card accent span-2-col bento-row-card" style="align-items: center; justify-content: space-between;">
           <div>
             <div class="badge">Tentang Event</div>
             <h3 class="card-title-lg" style="margin-bottom: 0;">Rudy Project Half Marathon</h3>
@@ -516,24 +628,137 @@
       </div>
     </section>
 
+    <!-- 2.5 KATEGORI LOMBA -->
+    <section id="kategori">
+      <div class="section-title-wrapper" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+        <div class="badge" style="margin: 0; background: transparent; border: none; padding: 0; color: var(--accent);">RACE CATEGORIES</div>
+        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem);">PILIH JARAK TERBAIKMU</h2>
+      </div>
+
+      <div class="bento-grid-3" style="grid-auto-rows: minmax(320px, auto);">
+        
+        <!-- 21K OPEN & MASTER -->
+        <div class="bento-card span-2-col" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+              <h3 style="font-size: 1.8rem; font-weight: 900; font-family: 'Barlow'; color: white;">21K OPEN & MASTER</h3>
+              <span class="badge" style="background: rgba(123,47,255,0.1); color: var(--primary); border-color: var(--primary);">HALF MARATHON</span>
+            </div>
+            <p style="color: var(--text-sub); line-height: 1.8; font-size: 0.95rem;">
+              Tantangan utama melewati rute beraspal premium BSD City yang steril dan datar. Didesain untuk pelari berpengalaman yang ingin memecahkan Personal Best mereka dengan atmosfer race yang profesional.
+            </p>
+          </div>
+          <div class="category-stats-grid">
+            <div>
+              <div style="font-size: 0.75rem; color: #888; text-transform: uppercase;">Flag Off</div>
+              <div style="font-size: 1rem; font-weight: 700; color: white; margin-top: 4px;">05.00 WIB</div>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: #888; text-transform: uppercase;">Cut Off Time</div>
+              <div style="font-size: 1rem; font-weight: 700; color: white; margin-top: 4px;">4 Jam</div>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: #888; text-transform: uppercase;">Ketentuan Usia</div>
+              <div style="font-size: 1rem; font-weight: 700; color: white; margin-top: 4px;">18+ Tahun</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image for 21K/10K runners -->
+        <div class="bento-card p-0 hover-scale">
+          <img src="assets/WhatsApp Image 2026-05-11 at 14.20.15.jpeg" alt="21K Category" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- 10K TNI/POLRI -->
+        <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--accent);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+              <h3 style="font-size: 1.5rem; font-weight: 900; font-family: 'Barlow'; color: white;">10K TNI/POLRI</h3>
+              <span class="badge" style="background: rgba(255,79,0,0.1); color: var(--accent); border-color: var(--accent);">SPECIAL</span>
+            </div>
+            <p style="color: var(--text-sub); line-height: 1.6; font-size: 0.9rem;">
+              Kategori kompetitif yang dikhususkan bagi anggota aktif TNI dan POLRI. Uji ketahanan fisik, kecepatan, dan disiplin tinggi di lintasan lari premium.
+            </p>
+          </div>
+          <div class="category-stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div>
+              <div style="font-size: 0.7rem; color: #888; text-transform: uppercase;">Flag Off</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: white; margin-top: 4px;">06.30 WIB</div>
+            </div>
+            <div>
+              <div style="font-size: 0.7rem; color: #888; text-transform: uppercase;">COT</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: white; margin-top: 4px;">2 Jam</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10K OPEN & MASTER -->
+        <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--accent);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+              <h3 style="font-size: 1.5rem; font-weight: 900; font-family: 'Barlow'; color: white;">10K OPEN & MASTER</h3>
+              <span class="badge" style="background: rgba(255,79,0,0.1); color: var(--accent); border-color: var(--accent);">COMPETITIVE</span>
+            </div>
+            <p style="color: var(--text-sub); line-height: 1.6; font-size: 0.9rem;">
+              Kategori kompetitif untuk umum yang terbagi dalam kelas Open (18-39 tahun) dan Master (40+ tahun). Uji performa kecepatanmu di rute BSD City.
+            </p>
+          </div>
+          <div class="category-stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div>
+              <div style="font-size: 0.7rem; color: #888; text-transform: uppercase;">Flag Off</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: white; margin-top: 4px;">06.30 WIB</div>
+            </div>
+            <div>
+              <div style="font-size: 0.7rem; color: #888; text-transform: uppercase;">COT</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: white; margin-top: 4px;">2 Jam</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5K FUN RUN -->
+        <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #00d2ff;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+              <h3 style="font-size: 1.5rem; font-weight: 900; font-family: 'Barlow'; color: white;">5K FUN RUN</h3>
+              <span class="badge" style="background: rgba(0,210,255,0.1); color: #00d2ff; border-color: #00d2ff;">FUN RUN</span>
+            </div>
+            <p style="color: var(--text-sub); line-height: 1.6; font-size: 0.9rem;">
+              Kategori lari santai yang sangat cocok bagi pemula, keluarga, dan komunitas. Nikmati keindahan BSD City sambil berolahraga dengan ceria.
+            </p>
+          </div>
+          <div class="category-stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div>
+              <div style="font-size: 0.7rem; color: #888; text-transform: uppercase;">Flag Off</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: white; margin-top: 4px;">06.45 WIB</div>
+            </div>
+            <div>
+              <div style="font-size: 0.7rem; color: #888; text-transform: uppercase;">COT</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: white; margin-top: 4px;">1 Jam</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- 3. MOTIVATION & TRACKING -->
     <section>
       <div class="bento-grid-3">
-        <div class="bento-card span-2-col light" style="display: flex; flex-direction: row; gap: 40px; padding: 40px;">
+        <div class="bento-card span-2-col light bento-row-card">
           <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-            <div class="badge" style="color: var(--accent); background: rgba(255,79,0,0.1);">Race Village</div>
-            <h2 class="card-title-lg">Pengalaman Sportainment Terbaik.</h2>
-            <p style="color: #666; font-weight: 500;">Nikmati hiburan, bazar, dan selebrasi meriah di garis akhir.</p>
+            <div class="badge" style="color: var(--accent); background: rgba(255,79,0,0.1); border-color: var(--accent);">Race Village</div>
+            <h2 class="card-title-lg" style="margin-bottom: 12px;">Pengalaman Sportainment Terbaik.</h2>
+            <p style="color: #666; font-weight: 500; margin-bottom: 16px;">Nikmati hiburan, bazar, dan selebrasi meriah di garis akhir.</p>
             <p style="font-weight: 800; font-family: 'Barlow'; margin-top: 10px;">SELEBRASI KEMENANGANMU</p>
           </div>
           <div style="flex: 1; background: #f5f5f5; border-radius: 20px; padding: 20px; display: flex; align-items: center; justify-content: center;">
             <!-- Placeholder for chart -->
-            <img src="assets/julita.jpeg" alt="Data" style="border-radius: 12px;">
+            <img src="assets/julita.jpeg" alt="Data" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover; object-position: center top;">
           </div>
         </div>
         
         <div class="bento-card">
-          <h2 class="card-title-lg" style="line-height: 1;">Ajang pembuktian bagi mereka yang berani keluar dari zona nyaman.</h2>
+          <h2 class="card-title-lg" style="line-height: 1.1; margin-bottom: 20px;">Ajang pembuktian bagi mereka yang berani keluar dari zona nyaman.</h2>
           <div style="margin-top: auto; color: var(--text-sub);">#PerformanceStartsInYourHead</div>
         </div>
       </div>
@@ -548,13 +773,13 @@
       
       <div class="bento-grid-3">
         <div class="bento-card p-0 hover-scale">
-          <img src="assets/WhatsApp Image 2026-05-11 at 14.17.19.jpeg" alt="Runner Moment" style="width: 100%; height: 350px; object-fit: cover;">
+          <img src="assets/WhatsApp Image 2026-05-11 at 14.17.19.jpeg" alt="Runner Moment" style="width: 100%; height: 250px; object-fit: cover;">
         </div>
         <div class="bento-card p-0 hover-scale">
-          <img src="assets/WhatsApp Image 2026-05-11 at 14.18.05.jpeg" alt="Runner Moment" style="width: 100%; height: 350px; object-fit: cover;">
+          <img src="assets/WhatsApp Image 2026-05-11 at 14.18.05.jpeg" alt="Runner Moment" style="width: 100%; height: 250px; object-fit: cover;">
         </div>
         <div class="bento-card p-0 hover-scale">
-          <img src="assets/WhatsApp Image 2026-05-11 at 14.18.44.jpeg" alt="Runner Moment" style="width: 100%; height: 350px; object-fit: cover;">
+          <img src="assets/WhatsApp Image 2026-05-11 at 14.18.44.jpeg" alt="Runner Moment" style="width: 100%; height: 250px; object-fit: cover;">
         </div>
       </div>
     </section>
@@ -569,7 +794,7 @@
       <div class="bento-grid-3">
         <!-- Product 1 -->
         <div class="bento-card p-0 hover-scale" style="background: white; color: black;">
-          <img src="https://lh3.googleusercontent.com/d/1zZYZohnoTXpKmny2F5NOPKFMlQIZXklt" alt="UTMB Series" style="width: 100%; height: 350px; object-fit: cover;">
+          <img src="https://lh3.googleusercontent.com/d/1zZYZohnoTXpKmny2F5NOPKFMlQIZXklt" alt="UTMB Series" style="width: 100%; height: 250px; object-fit: cover;">
           <div style="padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; position: absolute; bottom: 0; width: 100%;">
             <h3 style="font-size: 1.2rem; font-weight: 800; font-family: 'Barlow';">UTMB SERIES</h3>
             <p style="font-size: 0.8rem; opacity: 0.8;">Trail Performance Eyewear</p>
@@ -578,7 +803,7 @@
         
         <!-- Product 2 -->
         <div class="bento-card p-0 hover-scale" style="background: white; color: black;">
-          <img src="https://lh3.googleusercontent.com/d/1157xlZqJcsyU0g6eOKwWDtS8Q4z5ql-4" alt="Astral X Desert Matte" style="width: 100%; height: 350px; object-fit: cover;">
+          <img src="https://lh3.googleusercontent.com/d/1157xlZqJcsyU0g6eOKwWDtS8Q4z5ql-4" alt="Astral X Desert Matte" style="width: 100%; height: 250px; object-fit: cover;">
           <div style="padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; position: absolute; bottom: 0; width: 100%;">
             <h3 style="font-size: 1.2rem; font-weight: 800; font-family: 'Barlow';">ASTRAL X DESERT MATTE</h3>
             <p style="font-size: 0.8rem; opacity: 0.8;">Advanced Photochromic Technology</p>
@@ -587,7 +812,7 @@
         
         <!-- Product 3 -->
         <div class="bento-card p-0 hover-scale" style="background: white; color: black;">
-          <img src="https://lh3.googleusercontent.com/d/1amDuh_Rj3VMO7IrdgDyallFwV0esDepX" alt="Designed in Italy" style="width: 100%; height: 350px; object-fit: cover;">
+          <img src="https://lh3.googleusercontent.com/d/1amDuh_Rj3VMO7IrdgDyallFwV0esDepX" alt="Designed in Italy" style="width: 100%; height: 250px; object-fit: cover;">
           <div style="padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; position: absolute; bottom: 0; width: 100%;">
             <h3 style="font-size: 1.2rem; font-weight: 800; font-family: 'Barlow';">DESIGNED IN ITALY</h3>
             <p style="font-size: 0.8rem; opacity: 0.8;">Premium Aerospace Materials</p>
@@ -600,68 +825,68 @@
     <section>
       <h2 class="section-title" style="text-align: center; width: 100%; max-width: 100%; margin-bottom: 40px; font-size: clamp(2rem, 4vw, 3rem);">RUNDOWN EVENT</h2>
       
-      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 800px; margin: 0 auto;">
+      <div class="bento-grid-3" style="grid-auto-rows: auto; align-items: start;">
         
-        <div class="bento-card" style="padding: 24px;">
-          <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">08.00 - 17.00</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 8px;">PENGAMBILAN RACE PACK</h3>
-          <p style="color: var(--text-sub); font-size: 0.9rem;">Race Pack Collection - H-2 hingga H-1 sebelum lomba di lokasi resmi pendaftaran.</p>
-        </div>
-        
-        <div class="bento-card" style="padding: 24px;">
-          <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">04.30 - 05.00</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 8px;">PEMANASAN & DOA PEMBUKA</h3>
-          <p style="color: var(--text-sub); font-size: 0.9rem;">Race Day di BSD City. Persiapan mental dan fisik sebelum flag off dilakukan bersama.</p>
-        </div>
-        
-        <div class="bento-card" style="padding: 24px;">
-          <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">05.00</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 8px;">FLAG OFF 21 KM</h3>
-          <p style="color: var(--text-sub); font-size: 0.9rem;">Pelepasan pelari Half Marathon dengan Cut Off Time (COT) 4 jam.</p>
-        </div>
-        
-        <div class="bento-card" style="padding: 24px;">
-          <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">05.30</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 8px;">FLAG OFF 10 KM</h3>
-          <p style="color: var(--text-sub); font-size: 0.9rem;">Pelepasan pelari kompetitif 10K dengan Cut Off Time (COT) 2 jam.</p>
-        </div>
-        
-      </div>
-    </section>
-
-    <!-- 6. PHOTO CONTEST -->
-    <section>
-      <div style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title" style="margin-bottom: 24px; font-size: clamp(2.5rem, 5vw, 4rem); max-width: 100%; line-height: 1.1;">
-          ARE YOU READY TO BE THE NEXT <br><span style="color: var(--primary);">RPHM FLYER MODEL?</span>
-        </h2>
-        <p style="color: var(--text-sub); font-size: 1rem; line-height: 1.6; margin-bottom: 40px;">
-          Foto terbaik akan dijadikan model untuk Flyer Event Rudy Project Half Marathon 2026. Tunjukkan gaya larimu, kenakan kacamata Rudy Project, dan jadilah inspirasi jutaan pelari!
-        </p>
-        
-        <div class="bento-card" style="padding: 32px; margin-bottom: 24px; border: 1px solid rgba(123, 47, 255, 0.3);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-            <h3 style="font-size: 1.2rem; font-weight: 700;">SYARAT & KETENTUAN</h3>
+        <!-- Race Pack Collection -->
+        <div class="bento-card" style="padding: 32px;">
+          <div class="badge" style="color: var(--primary); background: rgba(123,47,255,0.1); border-color: var(--primary); margin-bottom: 20px;">EXPO & COLLECTION</div>
+          <h3 style="font-family: 'Barlow'; font-size: 1.5rem; margin-bottom: 20px; color: white;">RACE PACK COLLECTION</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px;">
+              <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">08.00 - 17.00</div>
+              <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Pengambilan Race Pack</div>
+              <div style="color: #888; font-size: 0.85rem; margin-top: 2px;">Lokasi resmi BSD City (H-2 hingga H-1 sebelum lomba).</div>
+            </div>
           </div>
-          <ul style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; padding-left: 20px;">
-            <li>Foto pelari dengan kualitas jelas dan menarik</li>
-            <li>Wajib menggunakan kacamata Rudy Project / RPJ</li>
-            <li>Format portrait & file resolusi tinggi</li>
-            <li>Upload di feeds & Story Instagram (akun tidak di-private)</li>
-            <li>Tag & mention @rudyprojectid @arrasadventure</li>
-            <li>Gunakan hashtag #RPHMModel #PerformanceStartsInYourHead</li>
-          </ul>
         </div>
         
-        <div class="bento-card" style="padding: 32px; border: 1px solid rgba(123, 47, 255, 0.3);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-            <h3 style="font-size: 1.2rem; font-weight: 700;">PEMENANG MENDAPATKAN</h3>
+        <!-- Race Day -->
+        <div class="bento-card span-2-col" style="padding: 32px;">
+          <div class="badge" style="color: var(--accent); background: rgba(255,79,0,0.1); border-color: var(--accent); margin-bottom: 20px;">RACE DAY</div>
+          <h3 style="font-family: 'Barlow'; font-size: 1.5rem; margin-bottom: 20px; color: white;">RACE DAY — OKTOBER 2026</h3>
+          
+          <div class="rundown-columns-grid">
+            
+            <!-- Column 1 -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">04.30 - 05.00</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Pemanasan & Doa Pembuka</div>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">05.00</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Flag Off 21K (COT 4 Jam)</div>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">06.00 - 06.30</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Bazar UMKM & Sponsor · Pemanasan 10K & 5K</div>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">06.30</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Flag Off 10K (COT 2 Jam)</div>
+              </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">06.45 - 07.00</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Persiapan & Flag Off 5K (COT 1 Jam)</div>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">09.00 - 10.30</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Upacara Pemenang 5K · 10K · 21K</div>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px;">10.30 - 12.00</div>
+                <div style="font-weight: 600; color: #eee; font-size: 0.95rem;">Hiburan & Penutupan</div>
+              </div>
+            </div>
+            
           </div>
-          <ul style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; padding-left: 20px;">
-            <li>Rudy Project Eyewear (Eksklusif)</li>
-            <li>Smartwatch Premium</li>
-          </ul>
         </div>
+        
       </div>
     </section>
 
