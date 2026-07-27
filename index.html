@@ -484,10 +484,10 @@
           <div style="border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); text-transform: uppercase;">
             24th Anniversary Race
           </div>
-          <div style="text-align: right;">
-            <div style="font-size: 0.75rem; color: #888; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">LOKASI</div>
+          <a href="#location" style="text-align: right; text-decoration: none; color: inherit; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+            <div style="font-size: 0.75rem; color: #888; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">LOKASI 📍</div>
             <div style="font-size: 1.1rem; font-weight: 800; font-family: 'Barlow'; color: white; margin-top: 4px;">BSD CITY, TANGERANG</div>
-          </div>
+          </a>
         </div>
 
         <!-- Center Row: Giant Typography -->
@@ -548,6 +548,80 @@
               <div style="font-size: 0.75rem; color: #888; margin-top: 2px;">Usia 13+ · COT 1 Jam</div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.2 DETAILED LOCATION -->
+    <section id="location">
+      <div class="section-title-wrapper" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+        <div class="badge" style="margin: 0; background: transparent; border: none; padding: 0; color: var(--accent); letter-spacing: 2px;">VENUE INFORMATION</div>
+        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem);">DETAILED <span style="color: var(--text-sub);">LOCATION</span></h2>
+      </div>
+
+      <div class="bento-grid-3" style="grid-auto-rows: auto; align-items: stretch;">
+        <!-- Left Info Card -->
+        <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 480px; background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent);">
+          <div>
+            <div style="font-weight: 800; font-family: 'Barlow'; font-size: 1.8rem; text-transform: uppercase; color: white; margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
+              <span>QBIG BSD CITY</span>
+            </div>
+
+            <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <div style="font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 6px;">LOCATION</div>
+              <div style="font-size: 1.05rem; color: white; font-weight: 700;">QBIG BSD City, Tangerang, Banten</div>
+            </div>
+
+            <div style="margin-bottom: 32px;">
+              <div style="font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 6px;">DETAILED ADDRESS</div>
+              <div style="font-size: 0.95rem; color: #ccc; line-height: 1.7; font-weight: 500;">
+                QBIG BSD City<br>
+                BSD City, Tangerang, Banten, Indonesia
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a
+              href="https://maps.app.goo.gl/rhGfADsaBvRSbjK86"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+                padding: 16px 28px;
+                background: var(--accent);
+                color: white;
+                text-decoration: none;
+                border-radius: 999px;
+                font-weight: 800;
+                font-size: 0.9rem;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                box-shadow: 0 10px 25px rgba(162, 89, 255, 0.3);
+                transition: all 0.3s ease;
+              "
+              onmouseover="this.style.background='#8b3dff'; this.style.boxShadow='0 15px 35px rgba(162, 89, 255, 0.5)'; this.style.transform='translateY(-2px)';"
+              onmouseout="this.style.background='var(--accent)'; this.style.boxShadow='0 10px 25px rgba(162, 89, 255, 0.3)'; this.style.transform='translateY(0)';"
+            >
+              📍 Open in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Map iframe Card -->
+        <div class="bento-card span-2-col p-0 hover-scale" style="position: relative; min-height: 480px; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.842819732924!2d106.6368687!3d-6.2843827999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb4030859dfb%3A0xbc8402640a0b831d!2sQBIG%20BSD%20City!5e0!3m2!1sen!2sid!4v1785048997915!5m2!1sen!2sid"
+            width="100%"
+            height="100%"
+            style="border: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 480px; filter: contrast(1.03) saturate(1.05);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
         </div>
       </div>
     </section>
